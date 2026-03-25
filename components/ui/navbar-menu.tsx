@@ -17,7 +17,7 @@ export const Menu = ({ setActive, children }: { setActive: (item: string | null)
     return (
         <nav
             onMouseLeave={() => setActive(null)} // resets the state
-            className="relative flex justify-center items-center space-x-4 border-white/[0.2] bg-black shadow-input px-8 py-3 border rounded-full boder"
+            className="relative flex justify-center items-center space-x-4 border-slate-200 bg-white/95 shadow-input px-8 py-3 border rounded-full boder backdrop-blur"
         >
             {children}
         </nav>
@@ -37,7 +37,7 @@ export const MenuItem = ({
 }) => {
     return (
         <div onMouseEnter={() => setActive(item)} className="relative">
-            <motion.p transition={{ duration: 0.3 }} className="hover:opacity-[0.9] text-white cursor-pointer">
+            <motion.p transition={{ duration: 0.3 }} className="hover:opacity-[0.9] text-slate-900 cursor-pointer">
                 {item}
             </motion.p>
             {active !== null && (
@@ -47,7 +47,7 @@ export const MenuItem = ({
                             <motion.div
                                 transition={transition}
                                 layoutId="active" // layoutId ensures smooth animation
-                                className="border-white/[0.2] bg-black shadow-xl border rounded-2xl overflow-hidden"
+                                className="border-slate-200 bg-white shadow-xl border rounded-2xl overflow-hidden"
                             >
                                 <motion.div
                                     layout // layout ensures smooth animation
@@ -69,8 +69,8 @@ export const ProductItem = ({ title, description, href, src }: { title: string; 
         <Link href={href} className="flex space-x-2">
             <Image src={src} width={140} height={70} alt={title} className="shadow-2xl rounded-md shrink-0" />
             <div>
-                <h4 className="mb-1 font-bold text-white text-xl">{title}</h4>
-                <p className="max-w-[10rem] text-neutral-300 text-sm">{description}</p>
+                <h4 className="mb-1 font-bold text-slate-900 text-xl">{title}</h4>
+                <p className="max-w-[10rem] text-slate-600 text-sm">{description}</p>
             </div>
         </Link>
     );
@@ -78,7 +78,7 @@ export const ProductItem = ({ title, description, href, src }: { title: string; 
 
 export const HoveredLink = ({ children, ...rest }: any) => {
     return (
-        <Link {...rest} className="flex items-center text-neutral-200 hover:text-neutral-400">
+        <Link {...rest} className="flex items-center text-slate-700 hover:text-slate-950">
             {children}
         </Link>
     );

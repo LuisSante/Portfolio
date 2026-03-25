@@ -31,14 +31,16 @@ const HeadFolder = ({
                     <Link href={href}>
                         <span className="text-xl">{iconResources}</span>
                     </Link>
-                    <a href={hrefPage}>
-                        <span className="text-xl">{iconPage}</span>
-                    </a>
+                    {hrefPage && iconPage && (
+                        <a href={hrefPage}>
+                            <span className="text-xl">{iconPage}</span>
+                        </a>
+                    )}
                 </div>
             ) : (
                 <div className="flex gap-x-4">
                     <span className="text-xl">{iconResources}</span>
-                    <span className="text-xl">{iconPage}</span>
+                    {iconPage && <span className="text-xl">{iconPage}</span>}
                 </div>
             )}
         </div>
@@ -49,7 +51,7 @@ const HeadFolder = ({
 export const FolderCard = ({ ...item }: ProjectsProps) => {
 
     return (
-        <div className='flex flex-col w-full max-w-full text-white'>
+        <div className='flex flex-col w-full max-w-full text-slate-900'>
             <div className="h-full max-h-[50px]">
                 <HeadFolder
                     href={item.link}

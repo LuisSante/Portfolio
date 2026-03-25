@@ -1,7 +1,7 @@
 'use client';
 
 import { FolderCard } from '@/components/ui/folder-card';
-import { FaChartLine, FaHeartbeat, FaImage, FaLink, FaProjectDiagram } from "react-icons/fa";
+import { FaChartLine, FaHeartbeat, FaImage, FaProjectDiagram } from "react-icons/fa";
 
 export interface ProjectsProps {
     title?: string;
@@ -58,11 +58,9 @@ const projects: ProjectsProps[] = [
     {
         title: 'AI for E-Commerce Profitability Insights',
         link: 'https://github.com/LuisSante/LexCom',
-        linkPage: 'https://lexcom.tech/',
         icon: < FaChartLine />,
         description: "Led the development of an AI-based product profitability prediction system for an e-commerce platform, plus extra services such as text generators using OpenAi API, the project covers from backend and frontend development to cloud deployment. Utilized data balancing techniques such as SMOTE during the training phase to enhance dataset accuracy and improve model performance",
         tech: `${technologies[0]} - Random Forest - SMOTE - Scrapy`,
-        iconPage: <FaLink />
     },
     {
         title: 'Stroke Prediction',
@@ -77,16 +75,15 @@ export function ProjectSection() {
     return (
         <div
             className="mx-auto px-8 pb-8 max-w-5xl"
-        // className="text-white"
         >
-            <h1 id="projects" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-white md:text-7xl">
+            <h1 id="projects" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-slate-900 md:text-7xl">
                 Projects
             </h1>
             <div className={'grid grid-cols-1 gap-6  py-10 md:grid-cols-2 lg:grid-cols-2'}>
                 {projects.map((item, idx) => (
                     <div
                         key={idx}
-                        className="relative flex flex-col items-start border-white/[0.2] shadow-md shadow-white mx-auto p-4 border rounded-md w-full max-w-full h-[300px]"
+                        className="relative flex flex-col items-start border-slate-200 shadow-md shadow-slate-200/60 bg-white mx-auto p-4 border rounded-md w-full max-w-full h-[300px]"
                     >
                         <FolderCard {...item} />
                     </div>

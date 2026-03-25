@@ -14,7 +14,7 @@ import { EvervaultCard, Icon } from '@/components/ui/evervault-card';
 export function SkillsSection() {
     return (
         <div className="mx-auto px-8 pb-8 max-w-5xl">
-            <h1 id="skills" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-white md:text-7xl">
+            <h1 id="skills" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-slate-900 md:text-7xl">
                 Skills
             </h1>
             <div className={'grid grid-cols-1 gap-6  py-10 md:grid-cols-2 lg:grid-cols-3'}>
@@ -22,12 +22,12 @@ export function SkillsSection() {
                     <Link
                         key={idx}
                         href={item.link}
-                        className="relative flex flex-col items-start border-white/[0.2] mx-auto p-4 border w-full max-w-full h-[13rem]"
+                        className="relative flex flex-col items-start border-slate-200 bg-white mx-auto p-4 border rounded-md w-full max-w-full h-[13rem]"
                     >
-                        <Icon className="-top-3 -left-3 absolute text-white size-6" />
-                        <Icon className="-bottom-3 -left-3 absolute text-white size-6" />
-                        <Icon className="-top-3 -right-3 absolute text-white size-6" />
-                        <Icon className="-right-3 -bottom-3 absolute text-white size-6" />
+                        <Icon className="-top-3 -left-3 absolute text-slate-400 size-6" />
+                        <Icon className="-bottom-3 -left-3 absolute text-slate-400 size-6" />
+                        <Icon className="-top-3 -right-3 absolute text-slate-400 size-6" />
+                        <Icon className="-right-3 -bottom-3 absolute text-slate-400 size-6" />
                         <EvervaultCard text={item.title} icon={item.icon} />
                     </Link>
                 ))}

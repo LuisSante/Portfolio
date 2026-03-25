@@ -56,7 +56,7 @@ const HeadFolderResearch = ({
 export const FolderCardResearch = ({ ...item }: ProjectsProps) => {
 
     return (
-        <div className='flex flex-col w-full max-w-full text-white'>
+        <div className='flex flex-col w-full max-w-full text-slate-900'>
             <div className="h-full max-h-[50px]">
                 <HeadFolderResearch
                     icon={<FaFolder />}
