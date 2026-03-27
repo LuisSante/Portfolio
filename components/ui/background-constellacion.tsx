@@ -105,7 +105,7 @@ export const BackgroundConstellacion = () => {
     return (
         <div className="pointer-events-none absolute inset-0 hidden md:block overflow-hidden">
             <motion.div
-                className="absolute -left-24 top-10 rounded-full w-80 h-80 bg-sky-200/40 blur-3xl"
+                className="absolute -left-24 top-10 rounded-full w-80 h-80 bg-[#0060E1]/30 blur-3xl"
                 animate={{
                     x: [0, 30, -12, 0],
                     y: [0, -20, 16, 0],
@@ -119,7 +119,7 @@ export const BackgroundConstellacion = () => {
             />
 
             <motion.div
-                className="absolute -right-20 bottom-8 rounded-full w-72 h-72 bg-cyan-200/35 blur-3xl"
+                className="absolute -right-20 bottom-8 rounded-full w-72 h-72 bg-[#2f82ff]/26 blur-3xl"
                 animate={{
                     x: [0, -24, 14, 0],
                     y: [0, 20, -10, 0],
@@ -142,13 +142,13 @@ export const BackgroundConstellacion = () => {
             >
                 <defs>
                     <linearGradient id="constellation-line" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.9" />
-                        <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.6" />
-                        <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.9" />
+                        <stop offset="0%" stopColor="#88b9ff" stopOpacity="0.85" />
+                        <stop offset="50%" stopColor="#0060E1" stopOpacity="0.65" />
+                        <stop offset="100%" stopColor="#2d86ff" stopOpacity="0.85" />
                     </linearGradient>
                     <radialGradient id="star-glow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="#f8fbff" stopOpacity="0.9" />
-                        <stop offset="100%" stopColor="#f8fbff" stopOpacity="0" />
+                        <stop offset="0%" stopColor="#eaf3ff" stopOpacity="0.92" />
+                        <stop offset="100%" stopColor="#eaf3ff" stopOpacity="0" />
                     </radialGradient>
                 </defs>
 
@@ -203,7 +203,7 @@ export const BackgroundConstellacion = () => {
                                 cx={star.x}
                                 cy={star.y}
                                 r={star.size}
-                                fill="#f8fbff"
+                                fill="#ddebff"
                                 animate={{
                                     opacity: [0.45, 1, 0.45],
                                     scale: [1, 1.4, 1],

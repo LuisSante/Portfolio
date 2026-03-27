@@ -12,10 +12,10 @@ export const EvervaultCard = ({ text, icon, className }: { text?: string; icon?:
             >
                 <CardPattern />
                 <div className="relative z-10 flex justify-center items-center">
-                    <div className="relative flex flex-col justify-center items-center rounded-full font-bold text-4xl text-slate-900 size-44">
-                        <div className="absolute bg-white/90 shadow-sm blur-sm rounded-full size-full" />
-                        <span className="z-20 text-slate-900 whitespace-nowrap">{text}</span>
-                        <span className="z-20 mt-4 text-slate-900 whitespace-nowrap">{icon}</span>
+                    <div className="relative flex flex-col justify-center items-center rounded-full font-bold text-4xl text-[#0b1d3a] size-44">
+                        <div className="absolute bg-white/90 shadow-[0_0_30px_rgba(0,96,225,0.15)] blur-sm rounded-full size-full" />
+                        <span className="z-20 text-[#0b1d3a] whitespace-nowrap">{text}</span>
+                        <span className="z-20 mt-4 text-[#0b1d3a] whitespace-nowrap">{icon}</span>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@ export function CardPattern({ mouseX, mouseY }: any) {
         <div className="pointer-events-none">
             <div className="absolute inset-0 rounded-2xl [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
             <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-700 opacity-0 group-hover/card:opacity-100 backdrop-blur-xl rounded-2xl transition duration-500"
+                className="absolute inset-0 bg-gradient-to-r from-[#6aa7ff] via-[#0060E1] to-[#004bb1] opacity-0 group-hover/card:opacity-100 backdrop-blur-xl rounded-2xl transition duration-500"
                 style={style}
             />
         </div>

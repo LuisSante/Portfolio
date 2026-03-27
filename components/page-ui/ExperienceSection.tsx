@@ -87,16 +87,16 @@ export function ExperienceSection() {
         <div
             className="mx-auto mb-[-150px] px-8 max-w-5xl"
         >
-            <h1 id="experience" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-slate-900 md:text-7xl">
+            <h1 id="experience" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-[#0b1d3a] md:text-7xl">
                 Experience
             </h1>
-            <div className="relative mx-auto pt-4 pb-32 max-w-2xl text-slate-900 antialiased">
+            <div className="relative mx-auto pt-4 pb-32 max-w-2xl text-[#0b1d3a] antialiased">
                 {experience.map((item, index) => (
                     <div key={index}>
                         <div key={`content-${index}`} className="mt-4 md:mt-0 mb-10">
-                            <h2 className={cn('text-xl text-slate-900')}>{item.title}</h2>
-                            <span className="py-1 rounded-full w-fit text-slate-500 text-sm italic">{item.badge}</span>
-                            <div className="mt-2 text-sm text-slate-700 prose prose-sm prose-slate">{item.description}</div>
+                            <h2 className={cn('text-xl text-[#0b1d3a]')}>{item.title}</h2>
+                            <span className="py-1 rounded-full w-fit text-primary/60 text-sm italic">{item.badge}</span>
+                            <div className="mt-2 text-sm text-primary/80 prose prose-sm prose-blue">{item.description}</div>
                         </div>
                     </div>
                 ))}

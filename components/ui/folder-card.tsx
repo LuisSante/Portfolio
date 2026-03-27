@@ -1,4 +1,4 @@
-import { FaFolder, FaGithub, FaVideo } from "react-icons/fa";
+import { FaFolder, FaGithub } from "react-icons/fa";
 import Link from 'next/link';
 import { TechnologyFooterFolder } from "./technology-footer-folder";
 import { ProjectsProps } from "../page-ui/ProjectSection";
@@ -23,24 +23,24 @@ const HeadFolder = ({
     return (
         <div className="flex justify-between items-center mb-[10px]">
             <div className="flex items-center gap-x-6">
-                <span className="mr-2 text-3xl">{icon}</span>
-                <span className='mr-2 text-3xl'>{iconProject}</span>
+                <span className="mr-2 text-primary text-3xl">{icon}</span>
+                <span className='mr-2 text-primary text-3xl'>{iconProject}</span>
             </div>
             {href ? (
                 <div className="flex gap-x-4">
                     <Link href={href}>
-                        <span className="text-xl">{iconResources}</span>
+                        <span className="text-primary text-xl">{iconResources}</span>
                     </Link>
                     {hrefPage && iconPage && (
                         <a href={hrefPage}>
-                            <span className="text-xl">{iconPage}</span>
+                            <span className="text-primary text-xl">{iconPage}</span>
                         </a>
                     )}
                 </div>
             ) : (
                 <div className="flex gap-x-4">
-                    <span className="text-xl">{iconResources}</span>
-                    {iconPage && <span className="text-xl">{iconPage}</span>}
+                    <span className="text-primary text-xl">{iconResources}</span>
+                    {iconPage && <span className="text-primary text-xl">{iconPage}</span>}
                 </div>
             )}
         </div>
@@ -51,7 +51,7 @@ const HeadFolder = ({
 export const FolderCard = ({ ...item }: ProjectsProps) => {
 
     return (
-        <div className='flex flex-col w-full max-w-full text-slate-900'>
+        <div className='flex flex-col w-full max-w-full text-[#0b1d3a]'>
             <div className="h-full max-h-[50px]">
                 <HeadFolder
                     href={item.link}
