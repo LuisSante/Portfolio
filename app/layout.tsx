@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { cookies } from "next/headers";
+import { i18n, isValidLocale } from "@/i18n/config";
 import "./globals.css";
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://briefcase-eight.vercel.app/'),
@@ -71,9 +65,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const localeFromCookie = cookies().get("NEXT_LOCALE")?.value;
+  const htmlLang = localeFromCookie && isValidLocale(localeFromCookie)
+    ? localeFromCookie
+    : i18n.defaultLocale;
+
   return (
-    <html lang="en">
-      <body className={poppins.className}>
+    <html lang={htmlLang}>
+      <body className="font-sans">
         {children}
       </body>
     </html>

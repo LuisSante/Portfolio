@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import { FaPython } from 'react-icons/fa';
 import {
     SiPandas,
@@ -10,12 +9,17 @@ import {
 } from 'react-icons/si';
 
 import { EvervaultCard, Icon } from '@/components/ui/evervault-card';
+import type { Dictionary } from '@/i18n/dictionaries';
 
-export function SkillsSection() {
+interface SkillsSectionProps {
+    dictionary: Dictionary['skills'];
+}
+
+export function SkillsSection({ dictionary }: SkillsSectionProps) {
     return (
         <div className="mx-auto px-8 pb-8 max-w-5xl">
             <h1 id="skills" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-[#0b1d3a] md:text-7xl">
-                Skills
+                {dictionary.title}
             </h1>
             <div className={'grid grid-cols-1 gap-6  py-10 md:grid-cols-2 lg:grid-cols-3'}>
                 {skills.map((item, idx) => (

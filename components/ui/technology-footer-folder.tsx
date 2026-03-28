@@ -1,21 +1,17 @@
 import { cn } from "@/lib/utils";
-// import { Montserrat } from "next/font/google";
-import { Caveat } from "next/font/google";
-import { Rajdhani } from "next/font/google";
 
 interface TechnologyFooterFolderProps {
     tech?: string;
 }
 
-export const typeFont = Caveat({
-    subsets: ["latin"],
-    weight: ["400", "500", "700"],
-});
+// Local utility-class wrappers to avoid remote font downloads in offline environments.
+export const typeFont = {
+    className: "font-serif italic"
+};
 
-export const typeFontRajdhani = Rajdhani({
-    subsets: ["latin"],
-    weight: ["400", "500", "700"],
-});
+export const typeFontRajdhani = {
+    className: "font-sans tracking-wide"
+};
 
 export const TechnologyFooterFolder = ({
     tech
@@ -28,4 +24,3 @@ export const TechnologyFooterFolder = ({
         </div>
     )
 }
-

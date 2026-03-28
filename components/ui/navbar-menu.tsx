@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 const transition = {
     type: 'spring',
@@ -13,11 +14,22 @@ const transition = {
     restSpeed: 0.001
 };
 
-export const Menu = ({ setActive, children }: { setActive: (item: string | null) => void; children: React.ReactNode }) => {
+export const Menu = ({
+    setActive,
+    children,
+    className
+}: {
+    setActive: (item: string | null) => void;
+    children: React.ReactNode;
+    className?: string;
+}) => {
     return (
         <nav
             onMouseLeave={() => setActive(null)} // resets the state
-            className="relative flex justify-center items-center space-x-4 border-primary/20 bg-white/95 shadow-[0_10px_30px_rgba(0,96,225,0.12)] px-8 py-3 border rounded-full boder backdrop-blur"
+            className={cn(
+                "relative flex justify-center items-center space-x-4 border-primary/20 bg-white/95 shadow-[0_10px_30px_rgba(0,96,225,0.12)] px-8 py-3 border rounded-full boder backdrop-blur",
+                className
+            )}
         >
             {children}
         </nav>
@@ -76,9 +88,9 @@ export const ProductItem = ({ title, description, href, src }: { title: string; 
     );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+export const HoveredLink = ({ children, className, ...rest }: any) => {
     return (
-        <Link {...rest} className="flex items-center text-primary/80 hover:text-primary">
+        <Link {...rest} className={cn("flex items-center text-primary/80 hover:text-primary", className)}>
             {children}
         </Link>
     );

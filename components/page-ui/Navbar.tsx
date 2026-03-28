@@ -1,41 +1,113 @@
 'use client';
+
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
-import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useMemo, useState } from 'react';
 
 import { HoveredLink, Menu, MenuItem } from '@/components/ui/navbar-menu';
-import { cn } from '@/lib/utils';
+import { i18n, normalizeLocale, type Locale } from '@/i18n/config';
+import type { Dictionary } from '@/i18n/dictionaries';
 
-export function Navbar() {
+interface NavbarProps {
+    locale: string;
+    dictionary: Dictionary['navbar'];
+}
+
+interface MainMenuProps {
+    locale: Locale;
+    dictionary: Dictionary['navbar'];
+}
+
+interface LanguageMenuProps {
+    locale: Locale;
+    dictionary: Dictionary['navbar'];
+    buildLocaleHref: (nextLocale: Locale) => string;
+}
+
+export function Navbar({ locale, dictionary }: NavbarProps) {
+    const pathname = usePathname();
+    const normalizedLocale = normalizeLocale(locale);
+
+    const buildLocaleHref = useMemo(
+        () => (nextLocale: Locale) => {
+            const segments = pathname.split('/');
+            const firstSegment = segments[1];
+
+            if (firstSegment && i18n.locales.includes(firstSegment as Locale)) {
+                segments[1] = nextLocale;
+            } else {
+                segments.splice(1, 0, nextLocale);
+            }
+
+            return segments.join('/') || `/${nextLocale}`;
+        },
+        [pathname]
+    );
+
     return (
-        <div className="relative flex justify-center items-center w-full">
-            <NavbarComponent className="top-2" />
+        <div className="fixed top-10 inset-x-0 z-50 px-4">
+            <div className="mx-auto grid w-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-3">
+                <div />
+                <MainMenu locale={normalizedLocale} dictionary={dictionary} />
+                <LanguageMenu locale={normalizedLocale} dictionary={dictionary} buildLocaleHref={buildLocaleHref} />
+            </div>
         </div>
     );
 }
 
-function NavbarComponent({ className }: { className?: string }) {
+function MainMenu({ locale, dictionary }: MainMenuProps) {
     const [active, setActive] = useState<string | null>(null);
+
     return (
-        <div className={cn('fixed top-10 inset-x-0 max-w-2xl mx-auto z-50', className)}>
+        <div className="justify-self-center">
             <Menu setActive={setActive}>
-                <MenuItem setActive={setActive} active={active} item="Navigation">
+                <MenuItem setActive={setActive} active={active} item={dictionary.navigation}>
                     <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="#landing-page">Landing Page</HoveredLink>
-                        <HoveredLink href="#experience">Experience</HoveredLink>
-                        <HoveredLink href="#skills">Skills</HoveredLink>
-                        <HoveredLink href="#projects">Projects</HoveredLink>
-                        <HoveredLink href="#research-project">Research Project</HoveredLink>
-                        <HoveredLink href="#contact-me">Contact Me</HoveredLink>
+                        <HoveredLink href={`/${locale}#landing-page`}>{dictionary.sections.landing}</HoveredLink>
+                        <HoveredLink href={`/${locale}#experience`}>{dictionary.sections.experience}</HoveredLink>
+                        <HoveredLink href={`/${locale}#skills`}>{dictionary.sections.skills}</HoveredLink>
+                        <HoveredLink href={`/${locale}#projects`}>{dictionary.sections.projects}</HoveredLink>
+                        <HoveredLink href={`/${locale}#research-project`}>{dictionary.sections.research}</HoveredLink>
+                        <HoveredLink href={`/${locale}#contact-me`}>{dictionary.sections.contact}</HoveredLink>
                     </div>
                 </MenuItem>
-                <MenuItem setActive={setActive} active={active} item="Social">
+                <MenuItem setActive={setActive} active={active} item={dictionary.social}>
                     <div className="flex flex-col space-y-4 text-sm">
                         <HoveredLink href="https://github.com/LuisSante" rel="noopener noreferrer" target="_blank">
-                            <GitHubLogoIcon className="mr-1" /> Github
+                            <GitHubLogoIcon className="mr-1" /> {dictionary.socialLinks.github}
                         </HoveredLink>
                         <HoveredLink href="https://www.linkedin.com/in/luis-felipe-sante-taipe-0ba00723b/" rel="noopener noreferrer" target="_blank">
-                            <LinkedInLogoIcon className="mr-1" /> Linkedin
+                            <LinkedInLogoIcon className="mr-1" /> {dictionary.socialLinks.linkedin}
                         </HoveredLink>
+                    </div>
+                </MenuItem>
+            </Menu>
+        </div>
+    );
+}
+
+function LanguageMenu({ locale, dictionary, buildLocaleHref }: LanguageMenuProps) {
+    const [active, setActive] = useState<string | null>(null);
+    const selectedLocaleLabel = dictionary.languageNames[locale];
+
+    return (
+        <div className="justify-self-end">
+            <Menu
+                setActive={setActive}
+                className="border-[#0b1d3a]/20 bg-[#eef6ff]/95 px-5 shadow-[0_10px_26px_rgba(11,29,58,0.18)]"
+            >
+                <MenuItem setActive={setActive} active={active} item={selectedLocaleLabel}>
+                    <div className="grid grid-cols-3 gap-3 text-sm">
+                        {i18n.locales.map((availableLocale) => (
+                            <HoveredLink
+                                key={availableLocale}
+                                href={buildLocaleHref(availableLocale)}
+                                aria-current={availableLocale === locale ? 'true' : undefined}
+                                className={availableLocale === locale ? 'font-semibold' : undefined}
+                            >
+                                {dictionary.languageNames[availableLocale]}
+                            </HoveredLink>
+                        ))}
                     </div>
                 </MenuItem>
             </Menu>
