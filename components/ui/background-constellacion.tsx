@@ -103,9 +103,9 @@ export const BackgroundConstellacion = () => {
     const lines = useMemo(() => createLines(stars), [stars]);
 
     return (
-        <div className="pointer-events-none absolute inset-0 hidden md:block overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 hidden md:block overflow-hidden dark:opacity-75">
             <motion.div
-                className="absolute -left-24 top-10 rounded-full w-80 h-80 bg-[#0060E1]/30 blur-3xl"
+                className="absolute -left-24 top-10 rounded-full w-80 h-80 bg-[#0060E1]/30 blur-3xl dark:bg-[#4a7cff]/20"
                 animate={{
                     x: [0, 30, -12, 0],
                     y: [0, -20, 16, 0],
@@ -119,7 +119,7 @@ export const BackgroundConstellacion = () => {
             />
 
             <motion.div
-                className="absolute -right-20 bottom-8 rounded-full w-72 h-72 bg-[#2f82ff]/26 blur-3xl"
+                className="absolute -right-20 bottom-8 rounded-full w-72 h-72 bg-[#2f82ff]/26 blur-3xl dark:bg-[#5d8cff]/20"
                 animate={{
                     x: [0, -24, 14, 0],
                     y: [0, 20, -10, 0],
@@ -135,7 +135,7 @@ export const BackgroundConstellacion = () => {
 
             <motion.svg
                 viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
-                className="w-full h-full"
+                className="w-full h-full dark:opacity-80"
                 preserveAspectRatio="xMidYMid slice"
                 animate={{ opacity: [0.85, 1, 0.9, 0.85] }}
                 transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}

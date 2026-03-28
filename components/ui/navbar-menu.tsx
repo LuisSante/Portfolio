@@ -27,7 +27,7 @@ export const Menu = ({
         <nav
             onMouseLeave={() => setActive(null)} // resets the state
             className={cn(
-                "relative flex justify-center items-center space-x-4 border-primary/20 bg-white/95 shadow-[0_10px_30px_rgba(0,96,225,0.12)] px-8 py-3 border rounded-full boder backdrop-blur",
+                "relative flex justify-center items-center space-x-4 border-primary/20 bg-white/95 shadow-[0_10px_30px_rgba(0,96,225,0.12)] px-8 py-3 border rounded-full boder backdrop-blur dark:border-white/15 dark:bg-slate-900/90 dark:shadow-[0_10px_30px_rgba(0,0,0,0.35)]",
                 className
             )}
         >
@@ -49,7 +49,7 @@ export const MenuItem = ({
 }) => {
     return (
         <div onMouseEnter={() => setActive(item)} className="relative">
-            <motion.p transition={{ duration: 0.3 }} className="hover:opacity-[0.9] text-[#0b1d3a] cursor-pointer">
+            <motion.p transition={{ duration: 0.3 }} className="hover:opacity-[0.9] text-[#0b1d3a] dark:text-slate-100 cursor-pointer">
                 {item}
             </motion.p>
             {active !== null && (
@@ -59,7 +59,7 @@ export const MenuItem = ({
                             <motion.div
                                 transition={transition}
                                 layoutId="active" // layoutId ensures smooth animation
-                                className="border-primary/20 bg-white shadow-[0_10px_30px_rgba(0,96,225,0.12)] border rounded-2xl overflow-hidden"
+                                className="border-primary/20 bg-white shadow-[0_10px_30px_rgba(0,96,225,0.12)] border rounded-2xl overflow-hidden dark:border-white/15 dark:bg-slate-900"
                             >
                                 <motion.div
                                     layout // layout ensures smooth animation

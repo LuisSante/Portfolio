@@ -12,10 +12,10 @@ export const EvervaultCard = ({ text, icon, className }: { text?: string; icon?:
             >
                 <CardPattern />
                 <div className="relative z-10 flex justify-center items-center">
-                    <div className="relative flex flex-col justify-center items-center rounded-full font-bold text-4xl text-[#0b1d3a] size-44">
-                        <div className="absolute bg-white/90 shadow-[0_0_30px_rgba(0,96,225,0.15)] blur-sm rounded-full size-full" />
-                        <span className="z-20 text-[#0b1d3a] whitespace-nowrap">{text}</span>
-                        <span className="z-20 mt-4 text-[#0b1d3a] whitespace-nowrap">{icon}</span>
+                    <div className="relative flex flex-col justify-center items-center rounded-full font-bold text-4xl text-[#0b1d3a] size-44 dark:text-slate-100">
+                        <div className="absolute bg-white/90 shadow-[0_0_30px_rgba(0,96,225,0.15)] blur-sm rounded-full size-full dark:bg-slate-900/80 dark:shadow-[0_0_30px_rgba(0,0,0,0.35)]" />
+                        <span className="z-20 text-[#0b1d3a] whitespace-nowrap dark:text-slate-100">{text}</span>
+                        <span className="z-20 mt-4 text-[#0b1d3a] whitespace-nowrap dark:text-slate-100">{icon}</span>
                     </div>
                 </div>
             </div>

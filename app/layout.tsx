@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
+import { ThemeProvider } from "@/components/theme-provider";
 import { i18n, isValidLocale } from "@/i18n/config";
 import "./globals.css";
 
@@ -71,9 +72,9 @@ export default function RootLayout({
     : i18n.defaultLocale;
 
   return (
-    <html lang={htmlLang}>
+    <html lang={htmlLang} suppressHydrationWarning>
       <body className="font-sans">
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

@@ -1,9 +1,12 @@
 'use client';
 
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
+import { Button } from '@/components/ui/button';
 import { HoveredLink, Menu, MenuItem } from '@/components/ui/navbar-menu';
 import { i18n, normalizeLocale, type Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries';
@@ -49,7 +52,10 @@ export function Navbar({ locale, dictionary }: NavbarProps) {
             <div className="mx-auto grid w-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-3">
                 <div />
                 <MainMenu locale={normalizedLocale} dictionary={dictionary} />
-                <LanguageMenu locale={normalizedLocale} dictionary={dictionary} buildLocaleHref={buildLocaleHref} />
+                <div className="flex items-center justify-self-end gap-2">
+                    <LanguageMenu locale={normalizedLocale} dictionary={dictionary} buildLocaleHref={buildLocaleHref} />
+                    <ThemeToggle />
+                </div>
             </div>
         </div>
     );
@@ -94,7 +100,7 @@ function LanguageMenu({ locale, dictionary, buildLocaleHref }: LanguageMenuProps
         <div className="justify-self-end">
             <Menu
                 setActive={setActive}
-                className="border-[#0b1d3a]/20 bg-[#eef6ff]/95 px-5 shadow-[0_10px_26px_rgba(11,29,58,0.18)]"
+                className="border-[#0b1d3a]/20 bg-[#eef6ff]/95 px-5 shadow-[0_10px_26px_rgba(11,29,58,0.18)] dark:border-white/15 dark:bg-slate-900/90 dark:shadow-[0_10px_26px_rgba(0,0,0,0.35)]"
             >
                 <MenuItem setActive={setActive} active={active} item={selectedLocaleLabel}>
                     <div className="grid grid-cols-3 gap-3 text-sm">
@@ -111,6 +117,32 @@ function LanguageMenu({ locale, dictionary, buildLocaleHref }: LanguageMenuProps
                     </div>
                 </MenuItem>
             </Menu>
+        </div>
+    );
+}
+
+function ThemeToggle() {
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const isDark = mounted && theme === 'dark';
+
+    return (
+        <div className="rounded-full border border-[#0b1d3a]/20 bg-[#eef6ff]/95 p-1 shadow-[0_10px_26px_rgba(11,29,58,0.18)] dark:border-white/15 dark:bg-slate-900/90 dark:shadow-[0_10px_26px_rgba(0,0,0,0.35)]">
+            <Button
+                type="button"
+                size="icon"
+                variant="ghost"
+                className="rounded-full text-[#0b1d3a] hover:bg-white/80 dark:text-slate-100 dark:hover:bg-slate-800"
+                onClick={() => setTheme(isDark ? 'light' : 'dark')}
+                aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+                {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </Button>
         </div>
     );
 }

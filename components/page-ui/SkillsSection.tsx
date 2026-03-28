@@ -18,7 +18,7 @@ interface SkillsSectionProps {
 export function SkillsSection({ dictionary }: SkillsSectionProps) {
     return (
         <div className="mx-auto px-8 pb-8 max-w-5xl">
-            <h1 id="skills" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-[#0b1d3a] md:text-7xl">
+            <h1 id="skills" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-[#0b1d3a] md:text-7xl dark:text-slate-100">
                 {dictionary.title}
             </h1>
             <div className={'grid grid-cols-1 gap-6  py-10 md:grid-cols-2 lg:grid-cols-3'}>
@@ -26,7 +26,7 @@ export function SkillsSection({ dictionary }: SkillsSectionProps) {
                     <Link
                         key={idx}
                         href={item.link}
-                        className="relative flex flex-col items-start border-primary/20 bg-white/95 mx-auto p-4 border rounded-md w-full max-w-full h-[13rem]"
+                        className="relative flex flex-col items-start border-primary/20 bg-white/95 mx-auto p-4 border rounded-md w-full max-w-full h-[13rem] dark:border-slate-700 dark:bg-slate-900/80"
                     >
                         <Icon className="-top-3 -left-3 absolute text-primary/35 size-6" />
                         <Icon className="-bottom-3 -left-3 absolute text-primary/35 size-6" />

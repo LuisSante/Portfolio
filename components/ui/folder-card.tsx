@@ -51,7 +51,7 @@ const HeadFolder = ({
 export const FolderCard = ({ ...item }: ProjectsProps) => {
 
     return (
-        <div className='flex flex-col w-full max-w-full text-[#0b1d3a]'>
+        <div className='flex flex-col w-full max-w-full text-[#0b1d3a] dark:text-slate-100'>
             <div className="h-full max-h-[50px]">
                 <HeadFolder
                     href={item.link}

@@ -27,7 +27,7 @@ export const MLChipAvatar = ({ src, alt, className }: MLChipAvatarProps) => {
     return (
         <div className={`relative z-30 mb-6 h-[360px] w-[360px] md:h-[540px] md:w-[540px] xl:h-[620px] xl:w-[620px] ${className ?? ''}`}>
             <motion.div
-                className="absolute inset-[6%] rounded-[40px] bg-[#0060E1]/25 blur-3xl"
+                className="absolute inset-[6%] rounded-[40px] bg-[#0060E1]/25 blur-3xl dark:bg-[#4a7cff]/18"
                 animate={{
                     opacity: [0.24, 0.48, 0.24],
                     scale: [0.95, 1.04, 0.95],
@@ -101,7 +101,7 @@ export const MLChipAvatar = ({ src, alt, className }: MLChipAvatarProps) => {
             </motion.svg>
 
             <motion.div
-                className="absolute left-[32.3%] top-[32.2%] h-[35.5%] w-[35.5%] overflow-hidden rounded-[10px] border border-[#bad7ff]/70 bg-white shadow-[0_0_35px_rgba(0,96,225,0.28)]"
+                className="absolute left-[32.3%] top-[32.2%] h-[35.5%] w-[35.5%] overflow-hidden rounded-[10px] border border-[#bad7ff]/70 bg-white shadow-[0_0_35px_rgba(0,96,225,0.28)] dark:border-[#7ba7ff]/55 dark:bg-slate-900 dark:shadow-[0_0_35px_rgba(0,0,0,0.45)]"
                 animate={{ y: [0, -3, 0] }}
                 transition={{ duration: 4.7, repeat: Infinity, ease: 'easeInOut' }}
             >
@@ -114,7 +114,7 @@ export const MLChipAvatar = ({ src, alt, className }: MLChipAvatarProps) => {
                     priority
                 />
                 <motion.div
-                    className="absolute -inset-x-[20%] top-0 h-[45%] bg-gradient-to-b from-white/20 via-[#58a0ff]/35 to-transparent mix-blend-screen"
+                    className="absolute -inset-x-[20%] top-0 h-[45%] bg-gradient-to-b from-white/20 via-[#58a0ff]/35 to-transparent mix-blend-screen dark:from-white/10 dark:via-[#2f5eb6]/30"
                     animate={{ y: ['-110%', '150%'] }}
                     transition={{
                         duration: 1.6,
@@ -124,7 +124,7 @@ export const MLChipAvatar = ({ src, alt, className }: MLChipAvatarProps) => {
                         repeatDelay: 4.2,
                     }}
                 />
-                <div className="absolute inset-0 rounded-[10px] border border-[#d5e8ff]/70" />
+                <div className="absolute inset-0 rounded-[10px] border border-[#d5e8ff]/70 dark:border-[#7ba7ff]/45" />
             </motion.div>
         </div>
     );

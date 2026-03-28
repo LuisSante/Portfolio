@@ -18,7 +18,7 @@ export const TechnologyFooterFolder = ({
 }: TechnologyFooterFolderProps) => {
     return (
         <div className={cn(
-            'text-md'
+            'text-md text-primary/85 dark:text-slate-300'
             , typeFont.className)}>
             {tech}
         </div>

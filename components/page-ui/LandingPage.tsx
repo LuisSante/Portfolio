@@ -28,12 +28,12 @@ export function LandingPage({ dictionary }: LandingPageProps) {
     return (
         <div
             id="landing-page"
-            className="relative flex items-center bg-gradient-to-b from-white via-[#f3f8ff] to-[#edf4ff] px-6 w-full min-h-screen text-[#0b1d3a]"
+            className="relative flex items-center bg-gradient-to-b from-white via-[#f3f8ff] to-[#edf4ff] px-6 w-full min-h-screen text-[#0b1d3a] dark:from-[#050a14] dark:via-[#091223] dark:to-[#0b162b] dark:text-slate-100"
         >
-            <div className="absolute inset-0 flex justify-center items-center bg-gradient-to-b from-white/95 to-[#edf4ff]/95 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]" />
+            <div className="absolute inset-0 flex justify-center items-center bg-gradient-to-b from-white/95 to-[#edf4ff]/95 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)] dark:from-[#050a14]/90 dark:to-[#0b162b]/90" />
             <div className="relative z-30 mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-8 py-16 lg:flex-row lg:gap-12">
                 <div className="w-full max-w-2xl text-center lg:max-w-[56%] lg:text-left">
-                    <p className="text-[#345c99] text-xs sm:text-base">
+                    <p className="text-[#345c99] text-xs sm:text-base dark:text-slate-300">
                         {dictionary.intro}
                     </p>
                     <div className="mt-4 hidden lg:block">
@@ -44,12 +44,13 @@ export function LandingPage({ dictionary }: LandingPageProps) {
                         <TypewriterEffectSmooth words={wordsSM} className="my-0 justify-center" />
                     </div>
                     <div className="mt-2 flex flex-col sm:flex-row items-center justify-center gap-4 lg:justify-start">
-                        {/* Todo: drive */}
                         <Link href="https://drive.google.com/file/d/1PORxDqwrjU3fiFwWFbM2loboKhgT6Uo5/view?usp=sharing">
-                            <Button className='bg-primary hover:bg-primary/90 text-primary-foreground'>{dictionary.actions.downloadCv}</Button>
+                            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">{dictionary.actions.downloadCv}</Button>
                         </Link>
                         <Link href="https://wa.me/51923258987">
-                            <Button variant="secondary" className="border border-primary/30 text-[#173e7c]">{dictionary.actions.contactMe}</Button>
+                            <Button variant="secondary" className="border border-primary/30 text-[#173e7c] dark:text-slate-100 dark:border-slate-600 dark:bg-slate-800/80 dark:hover:bg-slate-700">
+                                {dictionary.actions.contactMe}
+                            </Button>
                         </Link>
                     </div>
                 </div>
