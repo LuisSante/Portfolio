@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { ChipProfile } from './chip';
 
 type MLChipAvatarProps = {
     src: string;
@@ -20,9 +21,11 @@ const pulseNodes = [
     { x: 157.5, y: 77.5, delay: 1.4 },
 ];
 
+const ENERGY_CYCLE_DURATION = 5.8;
+
 export const MLChipAvatar = ({ src, alt, className }: MLChipAvatarProps) => {
     return (
-        <div className={`relative z-30 mb-6 h-[300px] w-[300px] md:h-[390px] md:w-[390px] ${className ?? ''}`}>
+        <div className={`relative z-30 mb-6 h-[360px] w-[360px] md:h-[540px] md:w-[540px] xl:h-[620px] xl:w-[620px] ${className ?? ''}`}>
             <motion.div
                 className="absolute inset-[6%] rounded-[40px] bg-[#0060E1]/25 blur-3xl"
                 animate={{
@@ -49,13 +52,9 @@ export const MLChipAvatar = ({ src, alt, className }: MLChipAvatarProps) => {
                     ease: 'easeInOut',
                 }}
             >
-                <Image
-                    src="/mlprofile.svg"
-                    alt="ML profile frame"
-                    fill
-                    className="object-contain drop-shadow-[0_0_24px_rgba(0,96,225,0.34)]"
-                    sizes="(min-width: 768px) 390px, 300px"
-                    priority
+                <ChipProfile
+                    cycleDuration={ENERGY_CYCLE_DURATION}
+                    className="h-full w-full overflow-visible drop-shadow-[0_0_24px_rgba(0,96,225,0.34)]"
                 />
             </motion.div>
 
@@ -111,17 +110,18 @@ export const MLChipAvatar = ({ src, alt, className }: MLChipAvatarProps) => {
                     alt={alt}
                     fill
                     className="object-cover"
-                    sizes="(min-width: 768px) 138px, 106px"
+                    sizes="(min-width: 1280px) 220px, (min-width: 768px) 192px, 128px"
                     priority
                 />
                 <motion.div
                     className="absolute -inset-x-[20%] top-0 h-[45%] bg-gradient-to-b from-white/20 via-[#58a0ff]/35 to-transparent mix-blend-screen"
                     animate={{ y: ['-110%', '150%'] }}
                     transition={{
-                        duration: 3.8,
+                        duration: 1.6,
                         repeat: Infinity,
                         ease: 'easeInOut',
-                        repeatDelay: 1.2,
+                        delay: 3.9,
+                        repeatDelay: 4.2,
                     }}
                 />
                 <div className="absolute inset-0 rounded-[10px] border border-[#d5e8ff]/70" />
