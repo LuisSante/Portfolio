@@ -73,7 +73,7 @@ function MainMenu({ locale, dictionary }: MainMenuProps) {
                         <HoveredLink href={`/${locale}#experience`}>{dictionary.sections.experience}</HoveredLink>
                         <HoveredLink href={`/${locale}#skills`}>{dictionary.sections.skills}</HoveredLink>
                         <HoveredLink href={`/${locale}#projects`}>{dictionary.sections.projects}</HoveredLink>
-                        <HoveredLink href={`/${locale}#research-project`}>{dictionary.sections.research}</HoveredLink>
+                        <HoveredLink href={`/${locale}#publications`}>{dictionary.sections.publications}</HoveredLink>
                         <HoveredLink href={`/${locale}#contact-me`}>{dictionary.sections.contact}</HoveredLink>
                     </div>
                 </MenuItem>

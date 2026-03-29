@@ -12,9 +12,9 @@ export function ContacMeSection({ dictionary }: ContactMeSectionProps) {
 
     return (
         <div
-            className="mx-auto px-8 pb-8 max-w-5xl"
+            className="w-full items-start"
         >
-            <h1 id="contact-me" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-[#0b1d3a] md:text-7xl dark:text-slate-100">
+            <h1 id="contact-me" className="text-2xl text-[#0b1d3a] md:text-5xl dark:text-slate-100">
                 {dictionary.title}
             </h1>
             <div className="text-[#0b1d3a] dark:text-slate-100">

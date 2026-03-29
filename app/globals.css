@@ -2,6 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Avenir";
+  src:
+    url("https://visualdslab.com/fonts/Avenir/Regular/avenirnextregular.woff")
+      format("woff"),
+    url("/fonts/Avenir/Regular/avenirnextregular.woff") format("woff"),
+    url("/fonts/Avenir/Regular/avenirnextregular.ttf") format("truetype"),
+    url("/fonts/Avenir/Regular/avenirnextregular.eot")
+      format("embedded-opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src:
+    url("https://visualdslab.com/fonts/Avenir/Medium/avenirnextmedium.woff")
+      format("woff"),
+    url("/fonts/Avenir/Medium/avenirnextmedium.woff") format("woff"),
+    url("/fonts/Avenir/Medium/avenirnextmedium.ttf") format("truetype"),
+    url("/fonts/Avenir/Medium/avenirnextmedium.eot")
+      format("embedded-opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src:
+    url("https://visualdslab.com/fonts/Avenir/DemiBold/avenirnextdemibold.woff")
+      format("woff"),
+    url("/fonts/Avenir/DemiBold/avenirnextdemibold.woff") format("woff"),
+    url("/fonts/Avenir/DemiBold/avenirnextdemibold.ttf") format("truetype"),
+    url("/fonts/Avenir/DemiBold/avenirnextdemibold.eot")
+      format("embedded-opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src:
+    url("https://visualdslab.com/fonts/Avenir/Bold/avenirnextbold.woff")
+      format("woff"),
+    url("/fonts/Avenir/Bold/avenirnextbold.woff") format("woff"),
+    url("/fonts/Avenir/Bold/avenirnextbold.ttf") format("truetype"),
+    url("/fonts/Avenir/Bold/avenirnextbold.eot")
+      format("embedded-opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body,
 :root {

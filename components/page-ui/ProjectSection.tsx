@@ -5,8 +5,10 @@ import type { Dictionary } from '@/i18n/dictionaries';
 import { FaChartLine, FaHeartbeat, FaImage, FaProjectDiagram } from "react-icons/fa";
 
 export interface ProjectsProps {
-    title?: string;
-    link?: string;
+    name?: string;
+    date?: string;
+    github?: string;
+    repositoryState?: 'private' | 'public';
     linkPage?: string;
     icon?: React.ReactNode;
     iconPage?: React.ReactNode;
@@ -14,62 +16,49 @@ export interface ProjectsProps {
     iconSlides?: React.ReactNode;
     iconVideo?: React.ReactNode;
     description?: string;
+    location?: string;
+    knowledge?: string[];
+    labels?: {
+        date: string;
+        location: string;
+        knowledge: string;
+        github: string;
+        privateRepo: string;
+        publicRepo: string;
+    };
+    title?: string;
+    link?: string;
     tech?: string;
     hrefResearch?: string;
     hrefSlides?: string;
     hrefExplication?: string;
 }
 
-const projectResources: Pick<ProjectsProps, 'link' | 'icon'>[] = [
-    {
-        link: 'https://github.com/LuisSante/Fine-Tuning-of-LLaMA-2-with-QLoRA-Optimization',
-        icon: < FaProjectDiagram />,
-    },
-    {
-        link: 'https://github.com/LuisSante/Image-Classification',
-        icon: < FaImage />,
-    },
-    {
-        link: 'https://github.com/LuisSante/LexCom',
-        icon: < FaChartLine />,
-    },
-    {
-        link: 'https://github.com/LuisSante/Predicting-healthcare',
-        icon: < FaHeartbeat />,
-    },
-];
+const projectIcons: React.ReactNode[] = [<FaProjectDiagram key="icon-0" />, <FaImage key="icon-1" />, <FaChartLine key="icon-2" />, <FaHeartbeat key="icon-3" />];
 
 interface ProjectSectionProps {
     dictionary: Dictionary['projects'];
 }
 
 export function ProjectSection({ dictionary }: ProjectSectionProps) {
-    const projects = dictionary.items.reduce<ProjectsProps[]>((acc, item, index) => {
-        const resource = projectResources[index];
-        if (!resource) {
-            return acc;
-        }
-
-        acc.push({
-            ...resource,
-            ...item,
-        });
-
-        return acc;
-    }, []);
+    const projects = dictionary.items.map<ProjectsProps>((item, index) => ({
+        ...item,
+        labels: dictionary.labels,
+        icon: projectIcons[index % projectIcons.length]
+    }));
 
     return (
         <div
-            className="mx-auto px-8 pb-8 max-w-5xl"
+            className=""
         >
-            <h1 id="projects" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-[#0b1d3a] md:text-7xl dark:text-slate-100">
+            <h1 id="projects" className="text-2xl text-[#0b1d3a] md:text-5xl dark:text-slate-100">
                 {dictionary.title}
             </h1>
             <div className={'grid grid-cols-1 gap-6  py-10 md:grid-cols-2 lg:grid-cols-2'}>
                 {projects.map((item, idx) => (
                     <div
                         key={idx}
-                        className="relative flex flex-col items-start border-primary/20 shadow-md shadow-primary/10 bg-white mx-auto p-4 border rounded-md w-full max-w-full h-[300px] dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30"
+                        className="relative flex flex-col items-start border-primary/20 shadow-md shadow-primary/10 bg-white mx-auto p-4 border rounded-md w-full max-w-full min-h-[340px] dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30"
                     >
                         <FolderCard {...item} />
                     </div>

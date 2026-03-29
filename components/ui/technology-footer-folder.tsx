@@ -4,13 +4,13 @@ interface TechnologyFooterFolderProps {
     tech?: string;
 }
 
-// Local utility-class wrappers to avoid remote font downloads in offline environments.
+// Local utility-class wrappers that avoid overriding the global font family.
 export const typeFont = {
-    className: "font-serif italic"
+    className: "italic"
 };
 
 export const typeFontRajdhani = {
-    className: "font-sans tracking-wide"
+    className: "tracking-wide"
 };
 
 export const TechnologyFooterFolder = ({

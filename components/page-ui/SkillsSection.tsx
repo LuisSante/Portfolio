@@ -17,8 +17,8 @@ interface SkillsSectionProps {
 
 export function SkillsSection({ dictionary }: SkillsSectionProps) {
     return (
-        <div className="mx-auto px-8 pb-8 max-w-5xl">
-            <h1 id="skills" className="pt-20 md:pt-32 max-w-5xl font-bold text-2xl text-[#0b1d3a] md:text-7xl dark:text-slate-100">
+        <div className="w-full items-start">
+            <h1 id="skills" className="text-2xl text-[#0b1d3a] md:text-5xl dark:text-slate-100">
                 {dictionary.title}
             </h1>
             <div className={'grid grid-cols-1 gap-6  py-10 md:grid-cols-2 lg:grid-cols-3'}>
