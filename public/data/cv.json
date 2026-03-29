@@ -1,0 +1,205 @@
+{
+  "personal_info": {
+    "name": "Luis Felipe Sante Taipe",
+    "phone": "+51 923 258 987",
+    "email": "luissante123@gmail.com",
+    "location": "Rio de Janeiro, Brazil",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "portfolio": "DEV Portfolio"
+    },
+    "summary": "Data Scientist and Researcher currently pursuing a Master's degree in Mathematics and Data Science at Getulio Vargas Foundation (FGV). Focused on NLP, LLMs, and graph-based approaches such as knowledge graphs and structured representations. Experience with RAG systems and end-to-end NLP pipelines."
+  },
+  "education": [
+    {
+      "institution": "Getulio Vargas Foundation",
+      "adress_url": "https://maps.app.goo.gl/tJgGKJWCpEm2XEq56",
+      "degree": "Master's in Data Science & Artificial Intelligence",
+      "period": "2025 - Present",
+      "location": "Rio de Janeiro, Brazil"
+    },
+    {
+      "institution": "Getulio Vargas Foundation",
+      "adress_url": "https://maps.app.goo.gl/tJgGKJWCpEm2XEq56",
+      "degree": "Summer School in Data Science & Artificial Intelligence",
+      "period": "Jan 2025 - Mar 2025",
+      "location": "Rio de Janeiro, Brazil"
+    },
+    {
+      "institution": "National University of San Agustín",
+      "adress_url": "https://maps.app.goo.gl/5HHyhvRnv78PTJ1t8",
+      "degree": "Bachelor's in Computer Science",
+      "period": "2019 - 2023",
+      "location": "Arequipa, Peru"
+    }
+  ],
+  "experience": [
+    {
+      "name_project": "LegalXplain",
+      "role": "Backend Developer",
+      "organization": "Visual Data Science - FGV EMAP",
+      "period": "Mar 2025 - now",
+      "location": "Rio de Janeiro, Brazil",
+      "responsibilities": [
+        "Developed backend services for LegalXplain platform using NLP",
+        "Deployed scalable ML/NLP pipelines into production",
+        "Improved accessibility and understanding of legal documents"
+      ]
+    },
+    {
+      "name_project": "Sentiment Analysis and Structural Topic Modeling (SA-STM)",      
+      "role": "Machine Learning Researcher",
+      "organization": "Excelsius",
+      "period": "Oct 2024 - Feb 2025",
+      "location": "Lima, Peru",
+      "responsibilities": [
+        "Applied sentiment analysis and Structural Topic Modeling (STM)",
+        "Classified software requirements from user reviews"
+      ]
+    },
+    {
+      "name_project": "Trading World EVS Official Website",
+      "role": "Freelance Full-Stack Developer",
+      "organization": "Freelance",
+      "period": "Jun 2024 - Oct 2024",
+      "location": "Arequipa, Peru",
+      "responsibilities": [
+        "Developed official website",
+        "Built responsive UI and backend integration"
+      ]
+    },
+    {
+      "name_project": "LexCom",
+      "role": "Tech Lead",
+      "organization": "Lexcom.tech",
+      "period": "Oct 2023 - Oct 2024",
+      "location": "Arequipa, Peru",
+      "responsibilities": [
+        "Led development of profitability prediction system",
+        "Built ML models for e-commerce data",
+        "Integrated OpenAI-based text generation services",
+        "Handled full-stack and cloud deployment"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "title": "UrbanClipAtlas: A Visual Analytics Framework for Event and Scene Retrieval in Urban Videos",
+      "role": "Data Scientist Researcher",
+      "organization": "Visual Data Science - FGV EMAP",
+      "conference": "EuroVis",
+      "journal": null,
+      "knowledge": [
+        "Vision-Language Models (VLMs)",
+        "Knowledge Graphs",
+        "Spatiotemporal Data Analysis",
+        "Event and Scene Retrieval"
+      ],
+      "technology": [
+        "Python",
+        "HuggingFace",
+        "YOLOv8-World",
+        "Svelte",
+        "TypeScript",
+        "WebSockets",
+        "Computer Vision"
+      ],
+      "doi": null,
+      "GitHub": {
+        "url": "https://github.com/visual-ds/urbanclipatlas",
+        "state": "private"
+      }
+      
+    },
+    {
+      "title": "STRive: An association rule-based system for the exploration of spatiotemporal categorical data",
+      "role": "Data Scientist Researcher",
+      "organization": "Visual Data Science - FGV EMAP",
+      "conference": null,
+      "journal": "Computer & Graphics - SIBGRAPI",
+      "knowledge": [
+        "Association Rule Mining",
+        "Clustering",
+        "Spatiotemporal Data Analysis"
+      ],
+      "technology": [
+        "Python",
+        "scikit-learn",
+        "D3.js",
+        "TypeScript"
+      ],
+      "doi": "https://doi.org/10.1016/j.cag.2025.104410",
+      "GitHub": {
+        "url": "https://github.com/visual-ds/STRive",
+        "state": "public"
+      }
+      
+    }
+  ],
+  "bachellor_thesis": {
+    "title": "Modelado de temas mediante Clustering Aglomerativo y Sentence-BERT en comentarios de usuarios",
+    "description": "Topic modeling to find functionalities within user reviews of a Google Play Store app using unsupervised algorithms and sentence embeddings with Transformers. This research contributed to better understanding user needs and app development priorities.",
+    "video_url": "https://drive.google.com/file/d/1vkVYZGOzVnDu395V3ZxhEOlWddsvIbun/view",
+    "slides_url": "https://drive.google.com/file/d/13NJ4fZ0zsP3R3hzTZ9u3TKeIhvfhJfps/view",
+    "pdf_url": "https://drive.google.com/file/d/1I_xpMxvrG9xbJGiTDUOIom6ZEkxK1kNK/view",
+    "knowledge": [
+      "Python", 
+      "NLP",
+      "Topic Modelling", 
+      "Transformers", 
+      "Clustering"
+    ],
+    "location": "Arequipa, Peru",
+    "date": "Aug 2024"
+  },
+  "projects": [
+    {
+      "name": "Security Urban Perception Tracking",
+      "date": "Jun 2025",
+      "GitHub": "https://github.com/FGV-VIS-2025/final-project-security-urban-perception-tracking",
+      "description": "Visual prototype exploring urban security perception using eye-tracking data across participants",
+      "location": "Rio de Janeiro, Brazil",
+      "knowledge": [
+        "Eye-Tracking Data Analysis",
+        "Visual Analytics",
+        "Spatiotemporal Data Visualization"
+      ]
+    },
+    {
+      "name": "Fine-Tuning LLaMA 2 with QLoRA",
+      "date": "Aug 2024",
+      "GitHub": "https://github.com/LuisSante/Fine-Tuning-of-LLaMA-2-with-QLoRA-Optimization",
+      "description": "Conducted fine-tuning of the 'NousResearch/Llama-2-7b-chat-hf' model using the 'mlabonne/guanaco-llama2-1k' dataset to create the customized 'llama-2-7b-miniguanaco' model. Implemented QLoRA with a 64-dimension LoRA attention layer and 4-bit precision to optimize model performance while maintaining resource efficiency. Configured and trained the model with",
+      "location": "Arequipa, Peru",
+      "knowledge": [
+        "Fine Tuning", 
+        "Python",
+        "HuggingFace",
+        "PyTorch",
+        "LLaMA2",
+        "QLoRA"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Speaker on Topic Modeling",
+      "organization": "National University of Engineering (UNI)",
+      "date": "Oct 28, 2024",
+      "description": "Explained LDA and compared with clustering methods"
+    },
+    {
+      "name": "AWS Cloud Architecting",
+      "organization": "Amazon Web Services",
+      "date": "Dec 2023",
+      "description": "Focused on cloud optimization and architecture"
+    },
+    {
+      "name": "Fundamentals of Accelerated Data Science",
+      "organization": "NVIDIA",
+      "date": "Oct 2022",
+      "description": "Used CUDA and RAPIDS for ML acceleration"
+    }
+  ]
+}
