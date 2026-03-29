@@ -103,7 +103,7 @@ export const BackgroundConstellacion = () => {
     const lines = useMemo(() => createLines(stars), [stars]);
 
     return (
-        <div className="pointer-events-none absolute inset-0 hidden md:block overflow-hidden dark:opacity-75">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-70 md:opacity-100 dark:opacity-60 md:dark:opacity-75">
             <motion.div
                 className="absolute -left-24 top-10 rounded-full w-80 h-80 bg-[#0060E1]/30 blur-3xl dark:bg-[#4a7cff]/20"
                 animate={{

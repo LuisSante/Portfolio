@@ -246,7 +246,7 @@ export const MLChipAvatar = ({ src, alt, className }: MLChipAvatarProps) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open Mask2Former model on Hugging Face"
-            className={`relative z-30 mb-6 block h-[360px] w-[360px] cursor-pointer md:h-[540px] md:w-[540px] xl:h-[620px] xl:w-[620px] ${className ?? ''}`}
+            className={`relative z-30 mb-2 block h-[330px] w-[330px] cursor-pointer sm:h-[360px] sm:w-[360px] md:mb-6 md:h-[540px] md:w-[540px] xl:h-[620px] xl:w-[620px] ${className ?? ''}`}
         >
             <motion.div
                 className="absolute inset-[6%] rounded-[40px] bg-[#0060E1]/25 blur-3xl dark:bg-[#4a7cff]/18"

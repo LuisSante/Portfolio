@@ -14,19 +14,19 @@ export function ExperienceSection({ dictionary }: ExperienceSectionProps) {
             <h1 id="experience" className="scroll-mt-28 text-2xl text-[#0b1d3a] md:text-5xl dark:text-slate-100">
                 {dictionary.title}
             </h1>
-            <div className="relative pt-6 text-[#0b1d3a] antialiased dark:text-slate-100">
-                <div className="space-y-4">
+            <div className="relative pt-4 text-[#0b1d3a] antialiased md:pt-6 dark:text-slate-100">
+                <div className="space-y-2 md:space-y-4">
                     {dictionary.items.map((item, index) => (
                         <div
                             key={`${item.name_project}-${index}`}
-                            className="flex w-full flex-col gap-8 py-5 md:flex-row md:items-start md:gap-10"
+                            className="flex w-full flex-col gap-4 py-3 md:flex-row md:items-start md:gap-10 md:py-5"
                         >
                             <div className="w-full max-w-40">
                                 <span className="rounded-full py-1 text-md text-primary/80 dark:text-[#7fb4ff]">{item.period}</span>
                             </div>
-                            <div className="flex max-w-5xl w-full">
+                            <div className="flex w-full max-w-5xl flex-col gap-4 md:flex-row md:gap-0">
                                 <div className="w-full md:flex-1">
-                                    <div className="mt-4 mb-4 md:mt-0 md:mb-0">
+                                    <div className="mt-2 mb-2 md:mt-0 md:mb-0">
                                         <h2 className={cn('text-xl text-[#0b1d3a] dark:text-slate-100')}>{item.name_project}</h2>
                                         <p className={cn('mt-1 text-base text-primary dark:text-slate-200')}>
                                             {item.role}

@@ -96,6 +96,7 @@ export interface Dictionary {
       desktopLine2: string[];
       mobile: string[];
     };
+    tags: string[];
     actions: {
       downloadCv: string;
       contactMe: string;
@@ -209,12 +210,21 @@ const baseDictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       },
     },
     landing: {
-      intro: "Hello, I'm Luis Sante. A programmer passionate about Artificial Intelligence",
+      intro:
+        "Hello, I'm Luis Sante. Data Scientist Researcher with advanced Software Engineering expertise, building scalable AI products from research to production.",
       words: {
-        desktopLine1: ['Artificial', 'Intelligence'],
+        desktopLine1: ['Data', 'Science'],
         desktopLine2: ['and', 'Machine', 'Learning'],
-        mobile: ['AI', 'and', 'ML'],
+        mobile: ['Data Science', 'and', 'Machine Learning'],
       },
+      tags: [
+        'Natural Language Processing',
+        'Graph Neural Network',
+        'Transformers',
+        'Graph',
+        'RAG',
+        'FullStack',
+      ],
       actions: {
         downloadCv: 'Download CV',
         contactMe: 'Contact Me',
@@ -495,12 +505,21 @@ const baseDictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       },
     },
     landing: {
-      intro: 'Hola, soy Luis Sante. Programador apasionado por la Inteligencia Artificial',
+      intro:
+        'Hola, soy Luis Sante. Data Scientist Researcher con conocimientos avanzados en Ingeniería de Software, enfocado en construir soluciones de IA escalables de investigación a producción.',
       words: {
-        desktopLine1: ['Inteligencia', 'Artificial'],
-        desktopLine2: ['y', 'Aprendizaje', 'Automático'],
-        mobile: ['IA', 'y', 'ML'],
+        desktopLine1: ['Data', 'Science'],
+        desktopLine2: ['y', 'Machine', 'Learning'],
+        mobile: ['Data Science', 'y', 'Machine Learning'],
       },
+      tags: [
+        'Natural Language Processing',
+        'Graph Neural Network',
+        'Transformers',
+        'Graph',
+        'RAG',
+        'FullStack',
+      ],
       actions: {
         downloadCv: 'Descargar CV',
         contactMe: 'Contáctame',
@@ -781,12 +800,21 @@ const baseDictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       },
     },
     landing: {
-      intro: 'Olá, eu sou Luis Sante. Programador apaixonado por Inteligência Artificial',
+      intro:
+        'Olá, eu sou Luis Sante. Data Scientist Researcher com conhecimento avançado em Engenharia de Software, focado em levar pesquisa de IA para produtos escaláveis em produção.',
       words: {
-        desktopLine1: ['Inteligência', 'Artificial'],
+        desktopLine1: ['Data', 'Science'],
         desktopLine2: ['e', 'Machine', 'Learning'],
-        mobile: ['IA', 'e', 'ML'],
+        mobile: ['Data Science', 'e', 'Machine Learning'],
       },
+      tags: [
+        'Natural Language Processing',
+        'Graph Neural Network',
+        'Transformers',
+        'Graph',
+        'RAG',
+        'FullStack',
+      ],
       actions: {
         downloadCv: 'Baixar CV',
         contactMe: 'Fale comigo',
@@ -1062,11 +1090,12 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     landing: {
       ...baseDictionaries.en.landing,
-      intro: 'Bonjour, je suis Luis Sante. Développeur passionné par l’intelligence artificielle',
+      intro:
+        "Bonjour, je suis Luis Sante. Data Scientist Researcher avec une expertise avancée en génie logiciel, créant des solutions d'IA évolutives de la recherche à la production.",
       words: {
-        desktopLine1: ['Intelligence', 'Artificielle'],
+        desktopLine1: ['Data', 'Science'],
         desktopLine2: ['et', 'Machine', 'Learning'],
-        mobile: ['IA', 'et', 'ML'],
+        mobile: ['Data Science', 'et', 'Machine Learning'],
       },
       actions: {
         downloadCv: 'Télécharger le CV',
@@ -1212,11 +1241,12 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     landing: {
       ...baseDictionaries.en.landing,
-      intro: 'Hallo, ich bin Luis Sante. Entwickler mit Leidenschaft für Künstliche Intelligenz',
+      intro:
+        'Hallo, ich bin Luis Sante. Data Scientist Researcher mit fortgeschrittenem Software-Engineering-Know-how und Fokus auf skalierbare KI-Lösungen von Forschung bis Produktion.',
       words: {
-        desktopLine1: ['Künstliche', 'Intelligenz'],
+        desktopLine1: ['Data', 'Science'],
         desktopLine2: ['und', 'Machine', 'Learning'],
-        mobile: ['KI', 'und', 'ML'],
+        mobile: ['Data Science', 'und', 'Machine Learning'],
       },
       actions: {
         downloadCv: 'CV herunterladen',
@@ -1362,11 +1392,12 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     landing: {
       ...baseDictionaries.en.landing,
-      intro: 'Ciao, sono Luis Sante. Sviluppatore appassionato di Intelligenza Artificiale',
+      intro:
+        'Ciao, sono Luis Sante. Data Scientist Researcher con competenze avanzate in Ingegneria del Software, focalizzato su soluzioni AI scalabili dalla ricerca alla produzione.',
       words: {
-        desktopLine1: ['Intelligenza', 'Artificiale'],
+        desktopLine1: ['Data', 'Science'],
         desktopLine2: ['e', 'Machine', 'Learning'],
-        mobile: ['IA', 'e', 'ML'],
+        mobile: ['Data Science', 'e', 'Machine Learning'],
       },
       actions: {
         downloadCv: 'Scarica CV',

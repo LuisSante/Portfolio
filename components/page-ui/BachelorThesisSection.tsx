@@ -3,6 +3,7 @@ import { FaFilePdf, FaVideo } from 'react-icons/fa';
 import { PiSlideshow } from 'react-icons/pi';
 
 import type { Dictionary } from '@/i18n/dictionaries';
+import { cn } from '@/lib/utils';
 
 interface BachelorThesisSectionProps {
   dictionary: Dictionary['bachelorThesis'];
@@ -10,13 +11,19 @@ interface BachelorThesisSectionProps {
 
 export function BachelorThesisSection({ dictionary }: BachelorThesisSectionProps) {
   const thesis = dictionary.item;
+  const tagStyles = [
+    'border-fuchsia-200/80 bg-fuchsia-50/85 text-fuchsia-700',
+    'border-cyan-200/80 bg-cyan-50/85 text-cyan-700',
+    'border-emerald-200/80 bg-emerald-50/85 text-emerald-700',
+    'border-amber-200/80 bg-amber-50/85 text-amber-700',
+  ];
 
   return (
     <div className="w-full items-start">
       <h1 id="bachelor-thesis" className="text-2xl text-[#0b1d3a] md:text-5xl dark:text-slate-100">
         {dictionary.title}
       </h1>
-      <article className="mt-10 rounded-md border border-primary/20 bg-white p-6 shadow-md shadow-primary/10 dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30">
+      <article className="mt-10 rounded-md border border-[#9ab0dc]/45 bg-gradient-to-br from-white/95 via-[#fbf9ff]/90 to-[#f4fbf8]/90 p-6 shadow-md shadow-[#7a97dc]/20 dark:border-slate-700 dark:bg-none dark:bg-slate-900/80 dark:shadow-black/30">
         <h2 className="text-xl font-semibold text-[#0b1d3a] dark:text-slate-100">{thesis.title}</h2>
         <p className="mt-3 text-sm text-primary/85 dark:text-slate-300">{thesis.description}</p>
 
@@ -32,10 +39,14 @@ export function BachelorThesisSection({ dictionary }: BachelorThesisSectionProps
         <div className="mt-4">
           <p className="text-sm font-medium text-[#0b1d3a] dark:text-slate-200">{dictionary.labels.knowledge}</p>
           <div className="mt-2 flex flex-wrap gap-2">
-            {thesis.knowledge.map((topic) => (
+            {thesis.knowledge.map((topic, topicIndex) => (
               <span
                 key={topic}
-                className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary/80 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                className={cn(
+                  'rounded-full border px-3 py-1 text-xs',
+                  tagStyles[topicIndex % tagStyles.length],
+                  'dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300'
+                )}
               >
                 {topic}
               </span>

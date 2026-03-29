@@ -10,16 +10,16 @@ interface FooterProps {
 }
 
 const iconButtonClassName =
-  'inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 bg-white/80 text-primary transition-colors hover:bg-primary/10 dark:border-slate-600 dark:bg-slate-900/70 dark:text-slate-200 dark:hover:bg-slate-800';
+  'inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#9ab0dc]/50 bg-gradient-to-r from-white/90 to-[#f4f8ff]/90 text-[#3d62c6] transition-colors hover:bg-primary/10 dark:border-slate-600 dark:bg-none dark:bg-slate-900/70 dark:text-slate-200 dark:hover:bg-slate-800 md:h-11 md:w-11';
 
-const contactItemClassName = 'inline-flex items-center gap-2 text-sm text-primary/90 dark:text-slate-200';
+const contactItemClassName = 'inline-flex items-center gap-2 text-base text-[#5473bf] dark:text-slate-200 sm:text-sm';
 
 export function Footer({ dictionary }: FooterProps) {
   return (
-    <footer id="social" className="border-t border-[#0b1d3a]/15 bg-white/70 backdrop-blur dark:border-white/10 dark:bg-[#081228]/85">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-5">
-        <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
-          <div className="flex flex-wrap items-center gap-3 md:justify-start">
+    <footer id="social" className="border-t border-[#9ab0dc]/45 bg-gradient-to-r from-[#f8fbff]/90 via-[#f8f5ff]/85 to-[#f2fbf7]/90 backdrop-blur dark:border-white/10 dark:bg-none dark:bg-[#081228]/85">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 py-4 sm:px-6 md:gap-8 md:py-5">
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 md:justify-start md:gap-3">
             <Link
               href={SOCIAL_LINKS.github}
               rel="noopener noreferrer"
@@ -82,7 +82,7 @@ export function Footer({ dictionary }: FooterProps) {
             </Link>
           </div>
 
-          <div className="flex flex-col gap-2 md:items-end">
+          <div className="flex flex-col gap-2 sm:items-center md:items-end">
             <Link href="tel:+519258987" className={contactItemClassName}>
               <Phone className="h-4 w-4" />
               +519258987
@@ -98,7 +98,7 @@ export function Footer({ dictionary }: FooterProps) {
           </div>
         </div>
 
-        <p className="text-center text-xs text-primary/70 dark:text-slate-400">
+        <p className="text-center text-xs text-[#5f79ba] dark:text-slate-400 sm:text-[13px]">
           (C) Luis Felipe Sante Taipe. All Right Reserved
         </p>
       </div>

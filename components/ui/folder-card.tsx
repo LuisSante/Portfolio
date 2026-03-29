@@ -1,5 +1,6 @@
 import { FaFolder, FaGithub, FaLock } from "react-icons/fa";
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 import { TechnologyFooterFolder } from "./technology-footer-folder";
 import { ProjectsProps } from "../page-ui/ProjectSection";
 
@@ -61,6 +62,13 @@ const HeadFolder = ({
 
 
 export const FolderCard = ({ ...item }: ProjectsProps) => {
+    const tagStyles = [
+        'border-fuchsia-200/80 bg-fuchsia-50/85 text-fuchsia-700',
+        'border-cyan-200/80 bg-cyan-50/85 text-cyan-700',
+        'border-emerald-200/80 bg-emerald-50/85 text-emerald-700',
+        'border-amber-200/80 bg-amber-50/85 text-amber-700',
+    ];
+
     const projectTitle = item.name ?? item.title;
     const githubUrl = item.github ?? item.link;
     const repositoryState = item.repositoryState ?? 'public';
@@ -110,10 +118,14 @@ export const FolderCard = ({ ...item }: ProjectsProps) => {
                 <div className="mt-1 px-3 pb-3">
                     <p className="mb-2 text-sm font-medium text-[#0b1d3a] dark:text-slate-200">{knowledgeLabel}</p>
                     <div className="flex flex-wrap gap-2">
-                        {item.knowledge?.map((topic) => (
+                        {item.knowledge?.map((topic, topicIndex) => (
                             <span
                                 key={topic}
-                                className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary/80 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                                className={cn(
+                                    'rounded-full border px-3 py-1 text-xs',
+                                    tagStyles[topicIndex % tagStyles.length],
+                                    'dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300'
+                                )}
                             >
                                 {topic}
                             </span>

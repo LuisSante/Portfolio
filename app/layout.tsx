@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     {
       rel: 'icon',
       type: 'image/x-icon',
-      url: '/favicon/favicon.ico'
+      url: '/brain.svg'
     },
     {
       rel: 'icon',

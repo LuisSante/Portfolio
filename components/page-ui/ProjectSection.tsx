@@ -59,7 +59,7 @@ export function ProjectSection({ dictionary }: ProjectSectionProps) {
                 {projects.map((item, idx) => (
                     <div
                         key={idx}
-                        className="group/card relative flex flex-col items-start overflow-hidden border-primary/20 shadow-md shadow-primary/10 bg-white mx-auto p-4 border rounded-md w-full max-w-full min-h-[340px] dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30"
+                        className="group/card relative mx-auto flex w-full max-w-full min-h-[340px] flex-col items-start overflow-hidden rounded-md border border-[#9ab0dc]/45 bg-gradient-to-br from-white/95 via-[#fbf9ff]/90 to-[#f4fbf8]/90 p-4 shadow-md shadow-[#7a97dc]/20 dark:border-slate-700 dark:bg-none dark:bg-slate-900/80 dark:shadow-black/30"
                     >
                         <div className="pointer-events-none absolute inset-0 z-0 opacity-50">
                             <CardPattern />

@@ -26,28 +26,24 @@ export function EducationSection({ dictionary }: EducationSectionProps) {
                 <span className="rounded-full py-1 text-md text-primary/80 dark:text-[#7fb4ff]">{item.period}</span>
               </div>
 
-              <div className="flex max-w-5xl w-full">
+              <div className="flex w-full max-w-5xl flex-col gap-4 md:flex-row md:gap-0">
                 <div className="w-full md:flex-1">
-                  <div className="mt-4 mb-4 md:mt-0 md:mb-0">
+                  <div className="mt-2 mb-2 md:mt-0 md:mb-0">
                     <h2 className={cn('text-xl text-[#0b1d3a] dark:text-slate-100')}>{item.institution}</h2>
                     <p className={cn('mt-1 text-base text-primary dark:text-slate-200')}>{item.degree}</p>
                   </div>
                 </div>
 
                 <div className="flex flex-col items-start text-primary/90 md:items-end dark:text-slate-200">
-                  <div className="inline-flex items-center gap-2">
-                  <div className="mt-3 text-sm text-primary/85 dark:text-slate-200">
-                      <Link
-                        href={item.ubication}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 underline-offset-4 transition-colors hover:text-primary/80 hover:underline dark:hover:text-slate-100"
-                      >
-                        <MapPin className="size-4" />
-                        {dictionary.labels.ubication}
-                      </Link>
-                    </div>
-                  </div>
+                  <Link
+                    href={item.ubication}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-primary/85 underline-offset-4 transition-colors hover:text-primary hover:underline dark:text-slate-200 dark:hover:text-slate-100"
+                  >
+                    <MapPin className="size-4" />
+                    {dictionary.labels.ubication}
+                  </Link>
                   <p className="mt-1 text-sm text-primary/75 dark:text-slate-300">{item.location}</p>
                 </div>
               </div>
@@ -61,14 +57,14 @@ export function EducationSection({ dictionary }: EducationSectionProps) {
         {dictionary.certifications.map((certification, index) => (
           <article
             key={`${certification.name}-${index}`}
-            className="relative flex h-full min-h-[280px] flex-col rounded-md border border-primary/20 bg-white p-4 shadow-md shadow-primary/10 dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30"
+            className="relative flex h-full min-h-[280px] flex-col rounded-md border border-[#9ab0dc]/45 bg-gradient-to-br from-white/95 via-[#fbf9ff]/90 to-[#f4fbf8]/90 p-4 shadow-md shadow-[#7a97dc]/20 dark:border-slate-700 dark:bg-none dark:bg-slate-900/80 dark:shadow-black/30"
           >
-            <div className="mb-3 flex flex-wrap gap-3 justify-start">
+            <div className="mb-3 flex flex-wrap justify-start gap-3">
               <Link
                 href={certification.certificateUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md border border-primary/20 px-3 py-2 text-sm text-primary transition-colors hover:bg-primary/10 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
+                className="inline-flex items-center gap-2 rounded-md border border-[#9ab0dc]/45 px-3 py-2 text-sm text-primary transition-colors hover:bg-primary/10 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
               >
                 {dictionary.labels.certificateUrl}
                 <ExternalLink className="size-4" />

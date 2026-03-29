@@ -2,12 +2,20 @@ import Link from 'next/link';
 import { FaExternalLinkAlt, FaGithub, FaLock } from 'react-icons/fa';
 
 import type { Dictionary } from '@/i18n/dictionaries';
+import { cn } from '@/lib/utils';
 
 interface PublicationsSectionProps {
   dictionary: Dictionary['publications'];
 }
 
 export function PublicationsSection({ dictionary }: PublicationsSectionProps) {
+  const tagStyles = [
+    'border-fuchsia-200/80 bg-fuchsia-50/85 text-fuchsia-700',
+    'border-cyan-200/80 bg-cyan-50/85 text-cyan-700',
+    'border-emerald-200/80 bg-emerald-50/85 text-emerald-700',
+    'border-amber-200/80 bg-amber-50/85 text-amber-700',
+  ];
+
   return (
     <div className="w-full items-start">
       <h1 id="publications" className="text-2xl text-[#0b1d3a] md:text-5xl dark:text-slate-100">
@@ -21,7 +29,7 @@ export function PublicationsSection({ dictionary }: PublicationsSectionProps) {
           return (
             <article
               key={`${publication.title}-${index}`}
-              className="relative flex h-full min-h-[400px] flex-col rounded-md border border-primary/20 bg-white p-4 shadow-md shadow-primary/10 dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30"
+              className="relative flex h-full min-h-[400px] flex-col rounded-md border border-[#9ab0dc]/45 bg-gradient-to-br from-white/95 via-[#fbf9ff]/90 to-[#f4fbf8]/90 p-4 shadow-md shadow-[#7a97dc]/20 dark:border-slate-700 dark:bg-none dark:bg-slate-900/80 dark:shadow-black/30"
             >
               <div className="mb-2 flex flex-wrap gap-3 justify-start">
                 {publication.doi ? (
@@ -39,7 +47,7 @@ export function PublicationsSection({ dictionary }: PublicationsSectionProps) {
                   href={publication.github.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md border border-primary/20 px-3 py-2 text-sm text-primary transition-colors hover:bg-primary/10 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
+                  className="inline-flex items-center gap-2 rounded-md border border-[#9ab0dc]/45 px-3 py-2 text-sm text-primary transition-colors hover:bg-primary/10 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
                 >
                   <FaGithub className="size-4" />
                   {dictionary.labels.github}
@@ -68,10 +76,14 @@ export function PublicationsSection({ dictionary }: PublicationsSectionProps) {
               <div className="mt-4">
                 <p className="text-sm font-medium text-[#0b1d3a] dark:text-slate-200">{dictionary.labels.knowledge}</p>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  {publication.knowledge.map((topic) => (
+                  {publication.knowledge.map((topic, topicIndex) => (
                     <span
                       key={topic}
-                      className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary/80 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                      className={cn(
+                        'rounded-full border px-3 py-1 text-xs',
+                        tagStyles[topicIndex % tagStyles.length],
+                        'dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300'
+                      )}
                     >
                       {topic}
                     </span>
@@ -82,10 +94,14 @@ export function PublicationsSection({ dictionary }: PublicationsSectionProps) {
               <div className="mt-4">
                 <p className="text-sm font-medium text-[#0b1d3a] dark:text-slate-200">{dictionary.labels.technology}</p>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  {publication.technology.map((tool) => (
+                  {publication.technology.map((tool, toolIndex) => (
                     <span
                       key={tool}
-                      className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary/80 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                      className={cn(
+                        'rounded-full border px-3 py-1 text-xs',
+                        tagStyles[(toolIndex + 1) % tagStyles.length],
+                        'dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300'
+                      )}
                     >
                       {tool}
                     </span>
