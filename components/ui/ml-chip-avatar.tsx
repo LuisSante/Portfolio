@@ -49,13 +49,13 @@ const interactiveMasks: InteractiveMask[] = [
         id: 'sea',
         src: '/image/masks/2_sea.png',
         color: 'rgba(0, 145, 255, 0.52)',
-        glowColor: 'rgba(0, 145, 255, 0.26)',
+        glowColor: 'rgba(245, 77, 255, 0.6)',
     },
     {
         id: 'sky',
         src: '/image/masks/0_sky-other-merged.png',
         color: 'rgba(90, 206, 255, 0.5)',
-        glowColor: 'rgba(90, 206, 255, 0.26)',
+        glowColor: 'rgba(99, 255, 101, 0.80)',
     },
 ];
 

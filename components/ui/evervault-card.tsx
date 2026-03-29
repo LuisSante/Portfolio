@@ -23,7 +23,12 @@ export const EvervaultCard = ({ text, icon, className }: { text?: string; icon?:
     );
 };
 
-export function CardPattern({ mouseX, mouseY }: any) {
+interface CardPatternProps {
+    mouseX?: number;
+    mouseY?: number;
+}
+
+export function CardPattern({ mouseX = 150, mouseY = 100 }: CardPatternProps) {
     const maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
     const style = { maskImage, WebkitMaskImage: maskImage };
 

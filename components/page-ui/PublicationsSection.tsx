@@ -21,7 +21,7 @@ export function PublicationsSection({ dictionary }: PublicationsSectionProps) {
           return (
             <article
               key={`${publication.title}-${index}`}
-              className="relative flex h-full min-h-[420px] flex-col rounded-md border border-primary/20 bg-white p-4 shadow-md shadow-primary/10 dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30"
+              className="relative flex h-full min-h-[400px] flex-col rounded-md border border-primary/20 bg-white p-4 shadow-md shadow-primary/10 dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30"
             >
               <div className="mb-2 flex flex-wrap gap-3 justify-start">
                 {publication.doi ? (

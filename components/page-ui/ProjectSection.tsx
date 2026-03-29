@@ -1,6 +1,7 @@
 'use client';
 
 import { FolderCard } from '@/components/ui/folder-card';
+import { CardPattern } from '@/components/ui/evervault-card';
 import type { Dictionary } from '@/i18n/dictionaries';
 import { FaChartLine, FaHeartbeat, FaImage, FaProjectDiagram } from "react-icons/fa";
 
@@ -54,13 +55,18 @@ export function ProjectSection({ dictionary }: ProjectSectionProps) {
             <h1 id="projects" className="text-2xl text-[#0b1d3a] md:text-5xl dark:text-slate-100">
                 {dictionary.title}
             </h1>
-            <div className={'grid grid-cols-1 gap-6  py-10 md:grid-cols-2 lg:grid-cols-2'}>
+            <div className={'grid grid-cols-1 gap-6 py-10 md:grid-cols-2 lg:grid-cols-2'}>
                 {projects.map((item, idx) => (
                     <div
                         key={idx}
-                        className="relative flex flex-col items-start border-primary/20 shadow-md shadow-primary/10 bg-white mx-auto p-4 border rounded-md w-full max-w-full min-h-[340px] dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30"
+                        className="group/card relative flex flex-col items-start overflow-hidden border-primary/20 shadow-md shadow-primary/10 bg-white mx-auto p-4 border rounded-md w-full max-w-full min-h-[340px] dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-black/30"
                     >
-                        <FolderCard {...item} />
+                        <div className="pointer-events-none absolute inset-0 z-0 opacity-50">
+                            <CardPattern />
+                        </div>
+                        <div className="relative z-10 w-full">
+                            <FolderCard {...item} />
+                        </div>
                     </div>
                 ))}
             </div>

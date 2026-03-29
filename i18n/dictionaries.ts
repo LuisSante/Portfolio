@@ -65,6 +65,10 @@ export interface Dictionary {
     socialLinks: {
       github: string;
       linkedin: string;
+      whatsapp: string;
+      instagram: string;
+      googleScholar: string;
+      orcid: string;
     };
     languageNames: Record<Locale, string>;
   };
@@ -149,7 +153,7 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       social: 'Social',
       language: 'Language',
       sections: {
-        landing: 'Landing Page',
+        landing: 'Home',
         experience: 'Experience',
         skills: 'Skills',
         projects: 'Projects',
@@ -159,6 +163,10 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       socialLinks: {
         github: 'GitHub',
         linkedin: 'LinkedIn',
+        whatsapp: 'WhatsApp',
+        instagram: 'Instagram',
+        googleScholar: 'Google Scholar',
+        orcid: 'ORCID',
       },
       languageNames: {
         en: 'EN',
@@ -298,6 +306,7 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
             'Knowledge Graphs',
             'Spatiotemporal Data Analysis',
             'Event and Scene Retrieval',
+            'Computer Vision',
           ],
           technology: [
             'Python',
@@ -306,7 +315,6 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
             'Svelte',
             'TypeScript',
             'WebSockets',
-            'Computer Vision',
           ],
           doi: null,
           github: {
@@ -383,6 +391,10 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       socialLinks: {
         github: 'GitHub',
         linkedin: 'LinkedIn',
+        whatsapp: 'WhatsApp',
+        instagram: 'Instagram',
+        googleScholar: 'Google Académico',
+        orcid: 'ORCID',
       },
       languageNames: {
         en: 'EN',
@@ -522,6 +534,7 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
             'Grafos de Conocimiento',
             'Análisis de Datos Espaciotemporales',
             'Recuperación de Eventos y Escenas',
+            'Computer Vision',
           ],
           technology: [
             'Python',
@@ -529,8 +542,7 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
             'YOLOv8-World',
             'Svelte',
             'TypeScript',
-            'WebSockets',
-            'Computer Vision',
+            'WebSockets'
           ],
           doi: null,
           github: {
@@ -607,6 +619,10 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       socialLinks: {
         github: 'GitHub',
         linkedin: 'LinkedIn',
+        whatsapp: 'WhatsApp',
+        instagram: 'Instagram',
+        googleScholar: 'Google Acadêmico',
+        orcid: 'ORCID',
       },
       languageNames: {
         en: 'EN',
@@ -746,6 +762,7 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
             'Grafos de Conhecimento',
             'Análise de Dados Espaçotemporais',
             'Recuperação de Eventos e Cenas',
+            'Computer Vision',
           ],
           technology: [
             'Python',
@@ -753,8 +770,7 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
             'YOLOv8-World',
             'Svelte',
             'TypeScript',
-            'WebSockets',
-            'Computer Vision',
+            'WebSockets'
           ],
           doi: null,
           github: {
