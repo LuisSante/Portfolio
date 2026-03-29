@@ -45,6 +45,22 @@ interface BachelorThesisItem {
   date: string;
 }
 
+interface EducationItem {
+  institution: string;
+  ubication: string;
+  degree: string;
+  period: string;
+  location: string;
+}
+
+interface CertificationItem {
+  name: string;
+  organization: string;
+  date: string;
+  description: string;
+  certificateUrl: string;
+}
+
 export interface Dictionary {
   metadata: {
     title: string;
@@ -57,6 +73,7 @@ export interface Dictionary {
     sections: {
       landing: string;
       experience: string;
+      education: string;
       skills: string;
       projects: string;
       publications: string;
@@ -87,6 +104,19 @@ export interface Dictionary {
   experience: {
     title: string;
     items: ExperienceItem[];
+  };
+  education: {
+    title: string;
+    certificationsTitle: string;
+    labels: {
+      ubication: string;
+      location: string;
+      organization: string;
+      date: string;
+      certificateUrl: string;
+    };
+    items: EducationItem[];
+    certifications: CertificationItem[];
   };
   skills: {
     title: string;
@@ -142,7 +172,7 @@ export interface Dictionary {
   };
 }
 
-const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
+const baseDictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
   en: {
     metadata: {
       title: 'Portfolio Luis Sante',
@@ -155,6 +185,7 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       sections: {
         landing: 'Home',
         experience: 'Experience',
+        education: 'Education',
         skills: 'Skills',
         projects: 'Projects',
         publications: 'Publications',
@@ -238,6 +269,63 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
             'Integrated OpenAI-based text generation services',
             'Handled full-stack and cloud deployment',
           ],
+        },
+      ],
+    },
+    education: {
+      title: 'Education',
+      certificationsTitle: 'Certifications',
+      labels: {
+        ubication: 'Ubication',
+        location: 'Location',
+        organization: 'Organization',
+        date: 'Date',
+        certificateUrl: 'Certificate URL',
+      },
+      items: [
+        {
+          institution: 'Getulio Vargas Foundation',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: "Master's in Data Science & Artificial Intelligence",
+          period: '2025 - Present',
+          location: 'Rio de Janeiro, Brazil',
+        },
+        {
+          institution: 'Getulio Vargas Foundation',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Summer School in Data Science & Artificial Intelligence',
+          period: 'Jan 2025 - Mar 2025',
+          location: 'Rio de Janeiro, Brazil',
+        },
+        {
+          institution: 'National University of San Agustín',
+          ubication: 'https://maps.app.goo.gl/5HHyhvRnv78PTJ1t8',
+          degree: "Bachelor's in Computer Science",
+          period: '2019 - 2023',
+          location: 'Arequipa, Peru',
+        },
+      ],
+      certifications: [
+        {
+          name: 'Speaker on Topic Modeling',
+          organization: 'National University of Engineering (UNI)',
+          date: 'Oct 28, 2024',
+          description: 'Explained LDA and compared with clustering methods.',
+          certificateUrl: 'https://www.uni.edu.pe/',
+        },
+        {
+          name: 'AWS Cloud Architecting',
+          organization: 'Amazon Web Services',
+          date: 'Dec 2023',
+          description: 'Focused on cloud optimization and architecture.',
+          certificateUrl: 'https://www.credly.com/',
+        },
+        {
+          name: 'Fundamentals of Accelerated Data Science',
+          organization: 'NVIDIA',
+          date: 'Oct 2022',
+          description: 'Used CUDA and RAPIDS for ML acceleration.',
+          certificateUrl: 'https://learn.nvidia.com/',
         },
       ],
     },
@@ -383,6 +471,7 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       sections: {
         landing: 'Inicio',
         experience: 'Experiencia',
+        education: 'Educación',
         skills: 'Habilidades',
         projects: 'Proyectos',
         publications: 'Publicaciones',
@@ -466,6 +555,63 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
             'Integrated OpenAI-based text generation services',
             'Handled full-stack and cloud deployment',
           ],
+        },
+      ],
+    },
+    education: {
+      title: 'Educación',
+      certificationsTitle: 'Certificados',
+      labels: {
+        ubication: 'Ubicación',
+        location: 'Lugar',
+        organization: 'Organización',
+        date: 'Fecha',
+        certificateUrl: 'URL del certificado',
+      },
+      items: [
+        {
+          institution: 'Fundación Getulio Vargas',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Maestría en Ciencia de Datos e Inteligencia Artificial',
+          period: '2025 - Presente',
+          location: 'Río de Janeiro, Brasil',
+        },
+        {
+          institution: 'Fundación Getulio Vargas',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Escuela de Verano en Ciencia de Datos e Inteligencia Artificial',
+          period: 'Ene 2025 - Mar 2025',
+          location: 'Río de Janeiro, Brasil',
+        },
+        {
+          institution: 'Universidad Nacional de San Agustín',
+          ubication: 'https://maps.app.goo.gl/5HHyhvRnv78PTJ1t8',
+          degree: 'Bachiller en Ciencias de la Computación',
+          period: '2019 - 2023',
+          location: 'Arequipa, Perú',
+        },
+      ],
+      certifications: [
+        {
+          name: 'Ponente sobre Topic Modeling',
+          organization: 'Universidad Nacional de Ingeniería (UNI)',
+          date: '28 Oct, 2024',
+          description: 'Explicación de LDA y comparación con métodos de clustering.',
+          certificateUrl: 'https://www.uni.edu.pe/',
+        },
+        {
+          name: 'AWS Cloud Architecting',
+          organization: 'Amazon Web Services',
+          date: 'Dic 2023',
+          description: 'Enfoque en optimización y arquitectura en la nube.',
+          certificateUrl: 'https://www.credly.com/',
+        },
+        {
+          name: 'Fundamentos de Ciencia de Datos Acelerada',
+          organization: 'NVIDIA',
+          date: 'Oct 2022',
+          description: 'Uso de CUDA y RAPIDS para acelerar modelos de ML.',
+          certificateUrl: 'https://learn.nvidia.com/',
         },
       ],
     },
@@ -611,6 +757,7 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
       sections: {
         landing: 'Início',
         experience: 'Experiência',
+        education: 'Educação',
         skills: 'Habilidades',
         projects: 'Projetos',
         publications: 'Publicações',
@@ -694,6 +841,63 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
             'Integrated OpenAI-based text generation services',
             'Handled full-stack and cloud deployment',
           ],
+        },
+      ],
+    },
+    education: {
+      title: 'Educação',
+      certificationsTitle: 'Certificados',
+      labels: {
+        ubication: 'Localização',
+        location: 'Lugar',
+        organization: 'Organização',
+        date: 'Data',
+        certificateUrl: 'URL do certificado',
+      },
+      items: [
+        {
+          institution: 'Fundação Getulio Vargas',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Mestrado em Ciência de Dados e Inteligência Artificial',
+          period: '2025 - Presente',
+          location: 'Rio de Janeiro, Brasil',
+        },
+        {
+          institution: 'Fundação Getulio Vargas',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Escola de Verão em Ciência de Dados e Inteligência Artificial',
+          period: 'Jan 2025 - Mar 2025',
+          location: 'Rio de Janeiro, Brasil',
+        },
+        {
+          institution: 'Universidade Nacional de San Agustín',
+          ubication: 'https://maps.app.goo.gl/5HHyhvRnv78PTJ1t8',
+          degree: 'Bacharelado em Ciência da Computação',
+          period: '2019 - 2023',
+          location: 'Arequipa, Peru',
+        },
+      ],
+      certifications: [
+        {
+          name: 'Palestrante sobre Topic Modeling',
+          organization: 'Universidade Nacional de Engenharia (UNI)',
+          date: '28 Out, 2024',
+          description: 'Explicou LDA e comparou com métodos de clustering.',
+          certificateUrl: 'https://www.uni.edu.pe/',
+        },
+        {
+          name: 'AWS Cloud Architecting',
+          organization: 'Amazon Web Services',
+          date: 'Dez 2023',
+          description: 'Foco em otimização e arquitetura de nuvem.',
+          certificateUrl: 'https://www.credly.com/',
+        },
+        {
+          name: 'Fundamentos de Ciência de Dados Acelerada',
+          organization: 'NVIDIA',
+          date: 'Out 2022',
+          description: 'Uso de CUDA e RAPIDS para aceleração de ML.',
+          certificateUrl: 'https://learn.nvidia.com/',
         },
       ],
     },
@@ -829,17 +1033,464 @@ const dictionaries: Record<'en' | 'es' | 'pt', Dictionary> = {
   },
 };
 
+const dictionaries: Record<Locale, Dictionary> = {
+  ...baseDictionaries,
+  fr: {
+    ...baseDictionaries.en,
+    metadata: {
+      title: 'Portfolio Luis Sante',
+      description: 'Bienvenue sur mon portfolio.',
+    },
+    navbar: {
+      ...baseDictionaries.en.navbar,
+      social: 'Réseaux',
+      language: 'Langue',
+      sections: {
+        ...baseDictionaries.en.navbar.sections,
+        landing: 'Accueil',
+        experience: 'Expérience',
+        education: 'Éducation',
+        skills: 'Compétences',
+        projects: 'Projets',
+        publications: 'Publications',
+        contact: 'Contactez-moi',
+      },
+      socialLinks: {
+        ...baseDictionaries.en.navbar.socialLinks,
+        googleScholar: 'Google Scholar',
+      },
+    },
+    landing: {
+      ...baseDictionaries.en.landing,
+      intro: 'Bonjour, je suis Luis Sante. Développeur passionné par l’intelligence artificielle',
+      words: {
+        desktopLine1: ['Intelligence', 'Artificielle'],
+        desktopLine2: ['et', 'Machine', 'Learning'],
+        mobile: ['IA', 'et', 'ML'],
+      },
+      actions: {
+        downloadCv: 'Télécharger le CV',
+        contactMe: 'Contactez-moi',
+      },
+    },
+    experience: {
+      ...baseDictionaries.en.experience,
+      title: 'Expérience',
+    },
+    education: {
+      ...baseDictionaries.en.education,
+      title: 'Éducation',
+      certificationsTitle: 'Certifications',
+      labels: {
+        ubication: 'Localisation',
+        location: 'Lieu',
+        organization: 'Organisation',
+        date: 'Date',
+        certificateUrl: 'URL du certificat',
+      },
+      items: [
+        {
+          institution: 'Fondation Getulio Vargas',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Master en Data Science et Intelligence Artificielle',
+          period: '2025 - Présent',
+          location: 'Rio de Janeiro, Brésil',
+        },
+        {
+          institution: 'Fondation Getulio Vargas',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'École d’été en Data Science et Intelligence Artificielle',
+          period: 'Jan 2025 - Mar 2025',
+          location: 'Rio de Janeiro, Brésil',
+        },
+        {
+          institution: 'Université nationale de San Agustín',
+          ubication: 'https://maps.app.goo.gl/5HHyhvRnv78PTJ1t8',
+          degree: 'Licence en informatique',
+          period: '2019 - 2023',
+          location: 'Arequipa, Pérou',
+        },
+      ],
+      certifications: [
+        {
+          name: 'Intervenant sur le Topic Modeling',
+          organization: 'Université nationale d’ingénierie (UNI)',
+          date: '28 oct. 2024',
+          description: 'Présentation de LDA et comparaison avec des méthodes de clustering.',
+          certificateUrl: 'https://www.uni.edu.pe/',
+        },
+        {
+          name: 'AWS Cloud Architecting',
+          organization: 'Amazon Web Services',
+          date: 'Déc. 2023',
+          description: 'Axé sur l’optimisation cloud et l’architecture.',
+          certificateUrl: 'https://www.credly.com/',
+        },
+        {
+          name: 'Fondamentaux de la Data Science accélérée',
+          organization: 'NVIDIA',
+          date: 'Oct. 2022',
+          description: 'Utilisation de CUDA et RAPIDS pour accélérer le ML.',
+          certificateUrl: 'https://learn.nvidia.com/',
+        },
+      ],
+    },
+    skills: {
+      title: 'Compétences',
+    },
+    projects: {
+      ...baseDictionaries.en.projects,
+      title: 'Projets',
+      labels: {
+        date: 'Date',
+        location: 'Lieu',
+        knowledge: 'Connaissances',
+        github: 'GitHub',
+        privateRepo: 'Dépôt privé',
+        publicRepo: 'Dépôt public',
+      },
+    },
+    publications: {
+      ...baseDictionaries.en.publications,
+      title: 'Publications',
+      labels: {
+        conference: 'Conférence',
+        journal: 'Revue',
+        knowledge: 'Connaissances',
+        technology: 'Technologie',
+        doi: 'DOI',
+        github: 'GitHub',
+        privateRepo: 'Dépôt privé',
+        publicRepo: 'Dépôt public',
+        location: 'Lieu',
+      },
+    },
+    bachelorThesis: {
+      ...baseDictionaries.en.bachelorThesis,
+      title: 'Mémoire de licence',
+      labels: {
+        location: 'Lieu',
+        date: 'Date',
+        knowledge: 'Connaissances',
+        pdf: 'PDF',
+        slides: 'Diapositives',
+        video: 'Vidéo',
+      },
+    },
+    contact: {
+      title: 'Contactez-moi',
+      nameLabel: 'Nom',
+      namePlaceholder: 'Votre nom',
+      emailLabel: 'Email',
+      emailPlaceholder: 'email@gmail.com',
+      messageLabel: 'Message',
+      messagePlaceholder: 'Écrivez votre message ici.',
+      submit: 'Envoyer',
+    },
+  },
+  de: {
+    ...baseDictionaries.en,
+    metadata: {
+      title: 'Portfolio Luis Sante',
+      description: 'Willkommen in meinem Portfolio.',
+    },
+    navbar: {
+      ...baseDictionaries.en.navbar,
+      navigation: 'Navigation',
+      social: 'Soziale Netzwerke',
+      language: 'Sprache',
+      sections: {
+        ...baseDictionaries.en.navbar.sections,
+        landing: 'Start',
+        experience: 'Erfahrung',
+        education: 'Ausbildung',
+        skills: 'Fähigkeiten',
+        projects: 'Projekte',
+        publications: 'Publikationen',
+        contact: 'Kontakt',
+      },
+    },
+    landing: {
+      ...baseDictionaries.en.landing,
+      intro: 'Hallo, ich bin Luis Sante. Entwickler mit Leidenschaft für Künstliche Intelligenz',
+      words: {
+        desktopLine1: ['Künstliche', 'Intelligenz'],
+        desktopLine2: ['und', 'Machine', 'Learning'],
+        mobile: ['KI', 'und', 'ML'],
+      },
+      actions: {
+        downloadCv: 'CV herunterladen',
+        contactMe: 'Kontakt',
+      },
+    },
+    experience: {
+      ...baseDictionaries.en.experience,
+      title: 'Erfahrung',
+    },
+    education: {
+      ...baseDictionaries.en.education,
+      title: 'Ausbildung',
+      certificationsTitle: 'Zertifikate',
+      labels: {
+        ubication: 'Standort',
+        location: 'Ort',
+        organization: 'Organisation',
+        date: 'Datum',
+        certificateUrl: 'Zertifikat-URL',
+      },
+      items: [
+        {
+          institution: 'Getulio-Vargas-Stiftung',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Master in Data Science und Künstlicher Intelligenz',
+          period: '2025 - Heute',
+          location: 'Rio de Janeiro, Brasilien',
+        },
+        {
+          institution: 'Getulio-Vargas-Stiftung',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Summer School in Data Science und Künstlicher Intelligenz',
+          period: 'Jan 2025 - Mär 2025',
+          location: 'Rio de Janeiro, Brasilien',
+        },
+        {
+          institution: 'Nationale Universität San Agustín',
+          ubication: 'https://maps.app.goo.gl/5HHyhvRnv78PTJ1t8',
+          degree: 'Bachelor in Informatik',
+          period: '2019 - 2023',
+          location: 'Arequipa, Peru',
+        },
+      ],
+      certifications: [
+        {
+          name: 'Speaker über Topic Modeling',
+          organization: 'Nationale Universität für Ingenieurwesen (UNI)',
+          date: '28. Okt. 2024',
+          description: 'LDA erklärt und mit Clustering-Methoden verglichen.',
+          certificateUrl: 'https://www.uni.edu.pe/',
+        },
+        {
+          name: 'AWS Cloud Architecting',
+          organization: 'Amazon Web Services',
+          date: 'Dez 2023',
+          description: 'Fokus auf Cloud-Optimierung und Architektur.',
+          certificateUrl: 'https://www.credly.com/',
+        },
+        {
+          name: 'Grundlagen der beschleunigten Data Science',
+          organization: 'NVIDIA',
+          date: 'Okt 2022',
+          description: 'CUDA und RAPIDS für ML-Beschleunigung eingesetzt.',
+          certificateUrl: 'https://learn.nvidia.com/',
+        },
+      ],
+    },
+    skills: {
+      title: 'Fähigkeiten',
+    },
+    projects: {
+      ...baseDictionaries.en.projects,
+      title: 'Projekte',
+      labels: {
+        date: 'Datum',
+        location: 'Ort',
+        knowledge: 'Kenntnisse',
+        github: 'GitHub',
+        privateRepo: 'Privates Repository',
+        publicRepo: 'Öffentliches Repository',
+      },
+    },
+    publications: {
+      ...baseDictionaries.en.publications,
+      title: 'Publikationen',
+      labels: {
+        conference: 'Konferenz',
+        journal: 'Zeitschrift',
+        knowledge: 'Kenntnisse',
+        technology: 'Technologie',
+        doi: 'DOI',
+        github: 'GitHub',
+        privateRepo: 'Privates Repository',
+        publicRepo: 'Öffentliches Repository',
+        location: 'Ort',
+      },
+    },
+    bachelorThesis: {
+      ...baseDictionaries.en.bachelorThesis,
+      title: 'Bachelorarbeit',
+      labels: {
+        location: 'Ort',
+        date: 'Datum',
+        knowledge: 'Kenntnisse',
+        pdf: 'PDF',
+        slides: 'Folien',
+        video: 'Video',
+      },
+    },
+    contact: {
+      title: 'Kontakt',
+      nameLabel: 'Name',
+      namePlaceholder: 'Dein Name',
+      emailLabel: 'E-Mail',
+      emailPlaceholder: 'email@gmail.com',
+      messageLabel: 'Nachricht',
+      messagePlaceholder: 'Schreibe deine Nachricht hier.',
+      submit: 'Senden',
+    },
+  },
+  it: {
+    ...baseDictionaries.en,
+    metadata: {
+      title: 'Portfolio Luis Sante',
+      description: 'Benvenuto nel mio portfolio.',
+    },
+    navbar: {
+      ...baseDictionaries.en.navbar,
+      navigation: 'Navigazione',
+      social: 'Social',
+      language: 'Lingua',
+      sections: {
+        ...baseDictionaries.en.navbar.sections,
+        landing: 'Home',
+        experience: 'Esperienza',
+        education: 'Istruzione',
+        skills: 'Competenze',
+        projects: 'Progetti',
+        publications: 'Pubblicazioni',
+        contact: 'Contattami',
+      },
+    },
+    landing: {
+      ...baseDictionaries.en.landing,
+      intro: 'Ciao, sono Luis Sante. Sviluppatore appassionato di Intelligenza Artificiale',
+      words: {
+        desktopLine1: ['Intelligenza', 'Artificiale'],
+        desktopLine2: ['e', 'Machine', 'Learning'],
+        mobile: ['IA', 'e', 'ML'],
+      },
+      actions: {
+        downloadCv: 'Scarica CV',
+        contactMe: 'Contattami',
+      },
+    },
+    experience: {
+      ...baseDictionaries.en.experience,
+      title: 'Esperienza',
+    },
+    education: {
+      ...baseDictionaries.en.education,
+      title: 'Istruzione',
+      certificationsTitle: 'Certificati',
+      labels: {
+        ubication: 'Ubicazione',
+        location: 'Luogo',
+        organization: 'Organizzazione',
+        date: 'Data',
+        certificateUrl: 'URL del certificato',
+      },
+      items: [
+        {
+          institution: 'Fondazione Getulio Vargas',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Master in Data Science e Intelligenza Artificiale',
+          period: '2025 - Presente',
+          location: 'Rio de Janeiro, Brasile',
+        },
+        {
+          institution: 'Fondazione Getulio Vargas',
+          ubication: 'https://maps.app.goo.gl/tJgGKJWCpEm2XEq56',
+          degree: 'Summer School in Data Science e Intelligenza Artificiale',
+          period: 'Gen 2025 - Mar 2025',
+          location: 'Rio de Janeiro, Brasile',
+        },
+        {
+          institution: 'Università Nazionale di San Agustín',
+          ubication: 'https://maps.app.goo.gl/5HHyhvRnv78PTJ1t8',
+          degree: 'Laurea in Informatica',
+          period: '2019 - 2023',
+          location: 'Arequipa, Perù',
+        },
+      ],
+      certifications: [
+        {
+          name: 'Relatore su Topic Modeling',
+          organization: 'Università Nazionale di Ingegneria (UNI)',
+          date: '28 ott 2024',
+          description: 'Spiegazione di LDA e confronto con metodi di clustering.',
+          certificateUrl: 'https://www.uni.edu.pe/',
+        },
+        {
+          name: 'AWS Cloud Architecting',
+          organization: 'Amazon Web Services',
+          date: 'Dic 2023',
+          description: 'Focalizzato su ottimizzazione cloud e architettura.',
+          certificateUrl: 'https://www.credly.com/',
+        },
+        {
+          name: 'Fondamenti di Data Science Accelerata',
+          organization: 'NVIDIA',
+          date: 'Ott 2022',
+          description: 'Uso di CUDA e RAPIDS per accelerare il ML.',
+          certificateUrl: 'https://learn.nvidia.com/',
+        },
+      ],
+    },
+    skills: {
+      title: 'Competenze',
+    },
+    projects: {
+      ...baseDictionaries.en.projects,
+      title: 'Progetti',
+      labels: {
+        date: 'Data',
+        location: 'Luogo',
+        knowledge: 'Conoscenze',
+        github: 'GitHub',
+        privateRepo: 'Repository privato',
+        publicRepo: 'Repository pubblico',
+      },
+    },
+    publications: {
+      ...baseDictionaries.en.publications,
+      title: 'Pubblicazioni',
+      labels: {
+        conference: 'Conferenza',
+        journal: 'Rivista',
+        knowledge: 'Conoscenze',
+        technology: 'Tecnologia',
+        doi: 'DOI',
+        github: 'GitHub',
+        privateRepo: 'Repository privato',
+        publicRepo: 'Repository pubblico',
+        location: 'Luogo',
+      },
+    },
+    bachelorThesis: {
+      ...baseDictionaries.en.bachelorThesis,
+      title: 'Tesi di laurea',
+      labels: {
+        location: 'Luogo',
+        date: 'Data',
+        knowledge: 'Conoscenze',
+        pdf: 'PDF',
+        slides: 'Slide',
+        video: 'Video',
+      },
+    },
+    contact: {
+      title: 'Contattami',
+      nameLabel: 'Nome',
+      namePlaceholder: 'Il tuo nome',
+      emailLabel: 'Email',
+      emailPlaceholder: 'email@gmail.com',
+      messageLabel: 'Messaggio',
+      messagePlaceholder: 'Scrivi qui il tuo messaggio.',
+      submit: 'Invia',
+    },
+  },
+};
+
 export function getDictionary(locale: string): Dictionary {
   const normalizedLocale = normalizeLocale(locale);
-  const localeFallbackMap: Record<Locale, keyof typeof dictionaries> = {
-    en: 'en',
-    es: 'es',
-    pt: 'pt',
-    fr: 'en',
-    de: 'en',
-    it: 'en',
-  };
-
-  const dictionaryLocale = localeFallbackMap[normalizedLocale] ?? i18n.defaultLocale;
-  return dictionaries[dictionaryLocale];
+  return dictionaries[normalizedLocale] ?? dictionaries[i18n.defaultLocale];
 }

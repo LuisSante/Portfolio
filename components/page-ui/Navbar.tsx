@@ -65,6 +65,7 @@ function SectionLinks({ locale, dictionary }: SectionLinksProps) {
   const links = [
     { href: `/${locale}#landing-page`, label: dictionary.sections.landing },
     { href: `/${locale}#experience`, label: dictionary.sections.experience },
+    { href: `/${locale}/eduacion`, label: dictionary.sections.education },
     { href: `/${locale}#projects`, label: dictionary.sections.projects },
     { href: `/${locale}#publications`, label: dictionary.sections.publications },
     { href: `/${locale}#contact-me`, label: dictionary.sections.contact },

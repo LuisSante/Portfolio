@@ -44,7 +44,7 @@ export function LandingPage({ dictionary }: LandingPageProps) {
                         <TypewriterEffectSmooth words={wordsSM} className="my-0 justify-center" />
                     </div>
                     <div className="mt-2 flex flex-col sm:flex-row items-center justify-center gap-4 lg:justify-start">
-                        <Link href="https://drive.google.com/file/d/1PORxDqwrjU3fiFwWFbM2loboKhgT6Uo5/view?usp=sharing">
+                        <Link href="https://drive.google.com/file/d/1CS7S_vRNKdoAyNyw4aj6Y8nYTcx59cm4/view?usp=sharing">
                             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">{dictionary.actions.downloadCv}</Button>
                         </Link>
                         <Link href="https://wa.me/51923258987">
